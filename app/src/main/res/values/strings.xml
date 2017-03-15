@@ -8,5 +8,20 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Willkommen</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Passwort</string>
+    <string name="action_sign_in">Anmelden oder Registrieren</string>
+    <string name="action_sign_in_short">Anmelden</string>
+    <string name="error_invalid_email">Die e-Mail Adresse ist ungültig</string>
+    <string name="error_invalid_password">Das Passwort ist zu kurz</string>
+    <string name="error_incorrect_password">Das Passwort ist falsch</string>
+    <string name="error_field_required">Das ist ein Pflichtfeld</string>
+    <string name="permission_rationale">"Zugriff auf Kontakte nötig."</string>
+    <string name="toggle_rentner">Rentner</string>
+    <string name="toggle_Veranstalter">Veranstalter</string>
+    <string name="switch_veranstalter">Sind Sie Veranstalter?</string>
 
 </resources>
