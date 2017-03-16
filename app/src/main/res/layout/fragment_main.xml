@@ -1,13 +1,124 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.julian.rentnertreff.Fragments.MainFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/grid_red"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="160dp"
+                        android:layout_height="165dp"
+                        android:layout_gravity="center_horizontal"
+                        app:srcCompat="@drawable/logo" />
+
+                    <TextView
+                        android:id="@+id/textView_Kategorie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/String_Kategorie"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/grid_green"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="160dp"
+                        android:layout_height="165dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/logo" />
+
+                    <TextView
+                        android:id="@+id/textView_demnaechst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/String_Demnaechst"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/grid_yellow"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="160dp"
+                        android:layout_height="165dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/logo" />
+
+                    <TextView
+                        android:id="@+id/textView_bewertung"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/String_wieWars"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/grid_blue"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="160dp"
+                        android:layout_height="165dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/logo" />
+
+                    <TextView
+                        android:id="@+id/textView_meinKalender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/String_meinKalender"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
 
 </FrameLayout>
