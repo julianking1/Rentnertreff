@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -27,10 +28,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/img_kategorie"
                         android:layout_width="160dp"
                         android:layout_height="165dp"
                         android:layout_gravity="center_horizontal"
+                        android:contentDescription="@string/content_description_kategorie"
                         app:srcCompat="@drawable/logo" />
 
                     <TextView
@@ -51,10 +53,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/img_demnaechst"
                         android:layout_width="160dp"
                         android:layout_height="165dp"
                         android:layout_gravity="center"
+                        android:contentDescription="@string/content_description_demnaechst"
                         app:srcCompat="@drawable/logo" />
 
                     <TextView
@@ -79,10 +82,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/img_bewertung"
                         android:layout_width="160dp"
                         android:layout_height="165dp"
                         android:layout_gravity="center"
+                        android:contentDescription="@string/content_description_demnaechst"
                         app:srcCompat="@drawable/logo" />
 
                     <TextView
@@ -102,10 +106,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/img_meinKalender"
                         android:layout_width="160dp"
                         android:layout_height="165dp"
                         android:layout_gravity="center"
+                        android:contentDescription="@string/content_description_meinKalender"
                         app:srcCompat="@drawable/logo" />
 
                     <TextView

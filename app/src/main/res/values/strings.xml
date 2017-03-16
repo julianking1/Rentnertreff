@@ -26,5 +26,9 @@
     <string name="String_Demnaechst">Demnächst </string>
     <string name="String_wieWars">Wie war\'s?</string>
     <string name="String_meinKalender">Mein Kalender</string>
+    <string name="content_description_meinKalender">Bild für das Grid Mein Kalender</string>
+    <string name="content_description_wieWars">Bild für das Grid Wie Wars</string>
+    <string name="content_description_kategorie">Bild für das Grid Kategorie</string>
+    <string name="content_description_demnaechst">Bild für das Grid Wie Wars</string>
 
 </resources>
