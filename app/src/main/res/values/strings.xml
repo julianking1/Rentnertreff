@@ -29,6 +29,19 @@
     <string name="content_description_meinKalender">Bild für das Grid Mein Kalender</string>
     <string name="content_description_wieWars">Bild für das Grid Wie Wars</string>
     <string name="content_description_kategorie">Bild für das Grid Kategorie</string>
-    <string name="content_description_demnaechst">Bild für das Grid Wie Wars</string>
+    <string name="content_description_demnaechst">Bild für das Grid Demnächst</string>
+    <string name="content_description_natur">Bild für das Grid Natur</string>
+    <string name="content_description_kultur">Bild für das Grid Kultur</string>
+    <string name="content_description_sport">Bild für das Grid Sport</string>
+    <string name="content_description_gehirnjogging">Bild für das Grid Gehirnjogging</string>
+    <string name="content_description_alltag">Bild für das Grid Alltag</string>
+    <string name="content_description_unterhaltung">Bild für das Grid Unterhaltung</string>
+
+    <string name="String_unterhaltung">Unterhaltung</string>
+    <string name="String_natur">Natur</string>
+    <string name="String_kultur">Kultur</string>
+    <string name="String_gehirnjogging">Gehirnjogging</string>
+    <string name="String_sport">Sport</string>
+    <string name="String_alltag">Alltag</string>
 
 </resources>

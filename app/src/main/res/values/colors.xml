@@ -7,4 +7,6 @@
     <color name="grid_red">#cc8689</color>
     <color name="grid_green">#a1da9a</color>
     <color name="grid_yellow">#d9d99d</color>
+    <color name="grid_brown">#9f7049</color>
+    <color name="grid_purple">#9f73b9</color>
 </resources>

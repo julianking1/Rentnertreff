@@ -22,6 +22,61 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/grid_yellow"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img_unterhaltung"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/content_description_unterhaltung"
+                        app:srcCompat="@drawable/logo" />
+
+                    <TextView
+                        android:id="@+id/textView_unterhaltung"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/String_unterhaltung"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/grid_blue"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img_natur"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/content_description_natur"
+                        app:srcCompat="@drawable/logo" />
+
+                    <TextView
+                        android:id="@+id/textView_natur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/String_natur"
+                        android:textAlignment="center"
+                        android:textSize="24sp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
@@ -29,18 +84,18 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/img_kategorie"
-                        android:layout_width="160dp"
-                        android:layout_height="165dp"
+                        android:id="@+id/img_sport"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         android:layout_gravity="center_horizontal"
-                        android:contentDescription="@string/content_description_kategorie"
+                        android:contentDescription="@string/content_description_sport"
                         app:srcCompat="@drawable/logo" />
 
                     <TextView
                         android:id="@+id/textView_Kategorie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/String_Kategorie"
+                        android:text="@string/String_sport"
                         android:textAlignment="center"
                         android:textSize="24sp" />
 
@@ -55,18 +110,18 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/img_demnaechst"
-                        android:layout_width="160dp"
-                        android:layout_height="165dp"
+                        android:id="@+id/img_alltag"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         android:layout_gravity="center"
-                        android:contentDescription="@string/content_description_demnaechst"
+                        android:contentDescription="@string/content_description_alltag"
                         app:srcCompat="@drawable/logo" />
 
                     <TextView
                         android:id="@+id/textView_demnaechst"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/String_Demnaechst"
+                        android:text="@string/String_alltag"
                         android:textAlignment="center"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -81,22 +136,22 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/grid_yellow"
+                    android:background="@color/grid_brown"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/img_bewertung"
-                        android:layout_width="160dp"
-                        android:layout_height="165dp"
+                        android:id="@+id/img_kultur"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         android:layout_gravity="center"
-                        android:contentDescription="@string/content_description_demnaechst"
+                        android:contentDescription="@string/content_description_kultur"
                         app:srcCompat="@drawable/logo" />
 
                     <TextView
                         android:id="@+id/textView_bewertung"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/String_wieWars"
+                        android:text="@string/String_kultur"
                         android:textAlignment="center"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -106,22 +161,22 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/grid_blue"
+                    android:background="@color/grid_purple"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/img_meinKalender"
-                        android:layout_width="160dp"
-                        android:layout_height="165dp"
+                        android:id="@+id/img_gehirnjogging"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         android:layout_gravity="center"
-                        android:contentDescription="@string/content_description_meinKalender"
+                        android:contentDescription="@string/content_description_gehirnjogging"
                         app:srcCompat="@drawable/logo" />
 
                     <TextView
                         android:id="@+id/textView_meinKalender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/String_meinKalender"
+                        android:text="@string/String_gehirnjogging"
                         android:textAlignment="center"
                         android:textSize="24sp" />
                 </LinearLayout>
