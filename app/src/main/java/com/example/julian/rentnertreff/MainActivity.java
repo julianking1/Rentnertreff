@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_meinKalender) {
 
+        } else {
+            fragment = new MainFragment();
         }
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();

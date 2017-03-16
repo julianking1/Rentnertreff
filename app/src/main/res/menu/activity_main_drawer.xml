@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_kategorie"
-            android:title="@string/String_Kategorie" />
-        <item
-            android:id="@+id/nav_demnaechst"
-            android:title="@string/String_Demnaechst" />
-        <item
-            android:id="@+id/nav_bewertung"
-            android:title="@string/String_wieWars" />
-        <item
-            android:id="@+id/nav_meinKalender"
-            android:title="@string/String_meinKalender" />
+            android:id="@+id/nav_startseite"
+            android:title="@string/String_Startseite" />
     </group>
+
+
+    <item android:title="@string/String_menue">
+        <menu>
+                <item
+                    android:id="@+id/nav_kategorie"
+                    android:title="@string/String_Kategorie" />
+                <item
+                    android:id="@+id/nav_demnaechst"
+                    android:title="@string/String_Demnaechst" />
+                <item
+                    android:id="@+id/nav_bewertung"
+                    android:title="@string/String_wieWars" />
+                <item
+                    android:id="@+id/nav_meinKalender"
+                    android:title="@string/String_meinKalender" />
+        </menu>
+    </item>
 
 
 

@@ -24,6 +24,8 @@
     <string name="switch_veranstalter">Sind Sie Veranstalter?</string>
     <string name="String_Kategorie">Kategorie</string>
     <string name="String_Demnaechst">Demnächst </string>
+    <string name="String_Startseite">Startseite </string>
+    <string name="String_menue">Menü </string>
     <string name="String_wieWars">Wie war\'s?</string>
     <string name="String_meinKalender">Mein Kalender</string>
     <string name="content_description_meinKalender">Bild für das Grid Mein Kalender</string>

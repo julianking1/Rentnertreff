@@ -5,14 +5,16 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.julian.rentnertreff.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class KategorieFragment extends Fragment {
+public class KategorieFragment extends Fragment implements OnClickListener{
 
 
     public KategorieFragment() {
@@ -27,4 +29,8 @@ public class KategorieFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_kategorie, container, false);
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }
