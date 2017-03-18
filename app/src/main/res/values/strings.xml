@@ -46,6 +46,9 @@
     <string name="String_sport">Sport</string>
     <string name="String_alltag">Alltag</string>
     <string name="String_Eventbeschreibung">Dies ist eine ausführliche Beschreibung des Events. Hier wird erklärt, was die Veranstaltung zu bieten hat, was mitgebracht werden muss und sonstige Informationen.</string>
-    <string name="String_Eventname" >Name des Events</string>
+    <string name="String_Eventname">Name des Events</string>
+    <string name="String_Reservieren">Reservieren</string>
+    <string name="Nummer">4</string>
+    <string name="title_activity_test_jana">TestJana</string>
 
 </resources>

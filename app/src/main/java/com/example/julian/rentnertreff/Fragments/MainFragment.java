@@ -2,13 +2,11 @@ package com.example.julian.rentnertreff.Fragments;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v4.app.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.julian.rentnertreff.R;
 
@@ -34,6 +32,12 @@ public class MainFragment extends Fragment {
         view  = inflater.inflate(R.layout.fragment_main, container, false);
 
         LinearLayout kategorie = (LinearLayout) view.findViewById(R.id.kategorieLayout);
+
+        //die folgenden 3 habe ich ergänzt (Jana)
+        LinearLayout demnaechst = (LinearLayout) view.findViewById(R.id. DemnaechstLayout);
+        LinearLayout meinKalender = (LinearLayout) view.findViewById(R.id. MeinKalender_Layout);
+        LinearLayout bewertung = (LinearLayout) view.findViewById(R.id. Bewertung_Layout);
+
         kategorie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +45,17 @@ public class MainFragment extends Fragment {
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
             }
         });
+
+        demnaechst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //nur zum testen, eigentlich kommt hier ja die Listview (Jana)
+                Fragment fragment = new DetailFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+            }
+        });
+
+
 
         //Platz für weitere Listener
 
