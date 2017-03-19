@@ -6,68 +6,90 @@
     tools:context="com.example.julian.rentnertreff.DetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="344dp"
-            android:layout_height="188dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="395dp"
+            android:layout_height="253dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/tabHost"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4">
+            app:layout_constraintTop_toBottomOf="@+id/date"
+            tools:layout_editor_absoluteX="8dp">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="167dp"
-                android:layout_height="160dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="171dp"
+                android:layout_height="237dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/grid_blue"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_menu_gallery" />
+                app:srcCompat="@drawable/logo"
+                tools:layout_editor_absoluteY="8dp" />
 
             <FrameLayout
                 android:id="@+id/detail_subcontainer"
-                android:layout_width="140dp"
-                android:layout_height="154dp"
+                android:layout_width="0dp"
+                android:layout_height="237dp"
                 android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toRightOf="@+id/imageView"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="204dp">
+                app:layout_constraintTop_toTopOf="parent">
 
             </FrameLayout>
         </android.support.constraint.ConstraintLayout>
 
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="344dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/String_Eventname"
+            android:textAppearance="@android:style/TextAppearance.Material.Headline"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="343dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/String_EventDate"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
         <TabHost
             android:id="@+id/tabHost"
             android:layout_width="0dp"
-            android:layout_height="228dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="9dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            tools:padding="8dp">
+            tools:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintHorizontal_bias="0.0">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -77,7 +99,9 @@
                 <TabWidget
                     android:id="@android:id/tabs"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="false"
+                    />
 
                 <FrameLayout
                     android:id="@android:id/tabcontent"
@@ -91,10 +115,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <ListView
+                        <android.support.constraint.ConstraintLayout
                             android:id="@+id/content_tab1"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent">
+
+                        </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -103,10 +129,12 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <ListView
+                        <android.support.constraint.ConstraintLayout
                             android:id="@+id/content_tab2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent">
+
+                        </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -115,25 +143,16 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <ListView
+                        <android.support.constraint.ConstraintLayout
                             android:id="@+id/content_tab3"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent">
+
+                        </android.support.constraint.ConstraintLayout>
                     </LinearLayout>
                 </FrameLayout>
             </LinearLayout>
         </TabHost>
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="191dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/String_Eventname"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="8dp" />
 
     </android.support.constraint.ConstraintLayout>
 

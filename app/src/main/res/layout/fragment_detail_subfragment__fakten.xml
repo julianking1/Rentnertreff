@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,11 +7,108 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:text="@string/String_Eventbeschreibung" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_delete" />
+
+            <TextView
+                android:id="@+id/essen"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Essen:"
+                android:textSize="@dimen/table" />
+
+            <TextView
+                android:id="@+id/essen_value"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="sehr billig"
+                android:textSize="@dimen/table" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_delete" />
+
+            <TextView
+                android:id="@+id/behindertengerecht"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Behindertengerecht:  "
+                android:textSize="@dimen/table" />
+
+            <TextView
+                android:id="@+id/behindertengerecht_value"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ja"
+                android:textSize="@dimen/table" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_delete" />
+
+            <TextView
+                android:id="@+id/hund"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Hunde:"
+                android:textSize="@dimen/table" />
+
+            <TextView
+                android:id="@+id/hund_value"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="erlaubt"
+                android:textSize="@dimen/table" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_delete" />
+
+            <TextView
+                android:id="@+id/sonstiges"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Sonstiges:"
+                android:textSize="@dimen/table" />
+
+            <TextView
+                android:id="@+id/sonstiges_value"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="sportliche Kleidung"
+                android:textSize="@dimen/table" />
+        </TableRow>
+    </TableLayout>
 </FrameLayout>

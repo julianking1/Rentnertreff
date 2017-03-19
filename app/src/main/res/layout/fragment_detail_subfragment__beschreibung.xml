@@ -2,13 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.julian.rentnertreff.Fragments.DetailSubfragment_Details">
+    tools:context="com.example.julian.rentnertreff.Fragments.DetailSubfragment_Beschreibung">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/String_Beispiel" />
+        android:layout_height="131dp"
+        android:text="@string/String_Eventbeschreibung"
+        android:textSize="@dimen/table" />
 
 </FrameLayout>

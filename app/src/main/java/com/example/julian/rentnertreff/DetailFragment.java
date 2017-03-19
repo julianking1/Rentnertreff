@@ -5,8 +5,11 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TabHost;
+import android.widget.TabWidget;
+import android.widget.TextView;
 
-import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Details;
+import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Beschreibung;
+import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Veranstalterinfo;
 import com.example.julian.rentnertreff.Fragments.DetailSubfragment_reservieren;
 import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Fakten;
 
@@ -44,21 +47,35 @@ public class DetailFragment extends AppCompatActivity {
 
         spec = host.newTabSpec("2");
         spec.setContent(R.id.Tab2);
-        spec.setIndicator("Details");
+        spec.setIndicator("Beschreibung");
         host.addTab(spec);
 
         //Tab 3
         spec = host.newTabSpec("3");
         spec.setContent(R.id.Tab3);
-        spec.setIndicator("Irgendwas");
+        spec.setIndicator("Veranstalter");
         host.addTab(spec);
 
+        final TabWidget tw = (TabWidget)host.findViewById(android.R.id.tabs);
+        for (int i = 0; i < tw.getChildCount(); ++i)
+        {
+            final View tabView = tw.getChildTabViewAt(i);
+            final TextView tv = (TextView)tabView.findViewById(android.R.id.title);
+            tv.setTextSize(13);
+        }
+
+
+        Fragment fragment1 = new DetailSubfragment_Fakten();
+        getSupportFragmentManager().beginTransaction().add(R.id.content_tab1, fragment1).commit();
+        Fragment fragment2 = new DetailSubfragment_Beschreibung();
+        getSupportFragmentManager().beginTransaction().add(R.id.content_tab2, fragment2).commit();
+        Fragment fragment3 = new DetailSubfragment_Veranstalterinfo();
+        getSupportFragmentManager().beginTransaction().add(R.id.content_tab3, fragment3).commit();
+
+        //vorichtshalber noch da.
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String arg0) {
-                Fragment fragment1 = new DetailSubfragment_Fakten();
-                getSupportFragmentManager().beginTransaction().add(R.id.content_tab1, fragment1).commit();
-
 
             }
         });
