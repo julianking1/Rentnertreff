@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.julian.rentnertreff.TestJana">
+    tools:context="com.example.julian.rentnertreff.Activities.TestJana">
 
     <TabHost
         android:id="@+id/tabHost3"
