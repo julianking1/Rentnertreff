@@ -1,4 +1,4 @@
-package com.example.julian.rentnertreff;
+package com.example.julian.rentnertreff.Activities;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +12,7 @@ import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Beschreibung;
 import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Veranstalterinfo;
 import com.example.julian.rentnertreff.Fragments.DetailSubfragment_reservieren;
 import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Fakten;
+import com.example.julian.rentnertreff.R;
 
 public class DetailFragment extends AppCompatActivity {
 

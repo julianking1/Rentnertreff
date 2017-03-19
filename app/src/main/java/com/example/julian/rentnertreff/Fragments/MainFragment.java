@@ -9,8 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.example.julian.rentnertreff.DetailFragment;
-import com.example.julian.rentnertreff.MainActivity;
+import com.example.julian.rentnertreff.Activities.DetailFragment;
 import com.example.julian.rentnertreff.R;
 
 /**
