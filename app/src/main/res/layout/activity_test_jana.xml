@@ -7,9 +7,9 @@
     tools:context="com.example.julian.rentnertreff.TestJana">
 
     <TabHost
-        android:id="@+id/tabHost"
-        android:layout_width="200dip"
-        android:layout_height="300dip">
+        android:id="@+id/tabHost3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="82dp" />
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -27,54 +27,47 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/tab1"
+                    android:id="@+id/Tab1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/jaaana"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab2"
+                    android:id="@+id/Fakten2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/jana"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab3"
+                    android:id="@+id/Fakten3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
     </TabHost>
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_test_jana" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </android.support.design.widget.CoordinatorLayout>

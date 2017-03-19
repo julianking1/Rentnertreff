@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 
 import com.example.julian.rentnertreff.R;
 
-public class DetailSubFragment_reservieren extends Fragment {
+public class DetailSubfragment_reservieren extends Fragment {
 
-    public DetailSubFragment_reservieren() {
+    public DetailSubfragment_reservieren() {
         // Required empty public constructor
     }
 

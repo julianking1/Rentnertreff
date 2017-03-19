@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.julian.rentnertreff.Fragments.DetailFragment">
+    tools:context="com.example.julian.rentnertreff.DetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.constraint.ConstraintLayout
@@ -86,27 +86,39 @@
                     android:padding="@dimen/textabstand">
 
                     <LinearLayout
-                        android:id="@+id/Fakten"
+                        android:id="@+id/Tab1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
+                        <ListView
+                            android:id="@+id/content_tab1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/Details"
+                        android:id="@+id/Tab2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
+                        <ListView
+                            android:id="@+id/content_tab2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/Kontakt"
+                        android:id="@+id/Tab3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
+                        <ListView
+                            android:id="@+id/content_tab3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
                     </LinearLayout>
                 </FrameLayout>
             </LinearLayout>

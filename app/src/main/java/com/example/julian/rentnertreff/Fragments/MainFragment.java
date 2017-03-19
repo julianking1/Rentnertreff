@@ -1,6 +1,7 @@
 package com.example.julian.rentnertreff.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.*;
 import android.view.LayoutInflater;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.example.julian.rentnertreff.DetailFragment;
+import com.example.julian.rentnertreff.MainActivity;
 import com.example.julian.rentnertreff.R;
 
 /**
@@ -50,8 +53,8 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //nur zum testen, eigentlich kommt hier ja die Listview (Jana)
-                Fragment fragment = new DetailFragment();
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                Intent intent = new Intent(getActivity(), DetailFragment.class);
+                startActivity(intent);
             }
         });
 
