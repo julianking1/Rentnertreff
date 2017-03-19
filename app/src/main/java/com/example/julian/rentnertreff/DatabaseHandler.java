@@ -132,4 +132,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // return contact list
         return eventList;
     }
+
+    public void deleteAll (){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_EVENTS);
+    }
 }

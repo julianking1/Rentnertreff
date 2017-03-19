@@ -44,7 +44,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment fragment = new KategorieFragment();
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("main_fragment").commit();
             }
         });
 
@@ -62,7 +62,7 @@ public class MainFragment extends Fragment {
             public void onClick(View v) {
                 //nur zum testen, eigentlich kommt hier ja die Listview (Jana)
                 Fragment fragment = new ListFragment();
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("main_fragment").commit();
             }
         });
 

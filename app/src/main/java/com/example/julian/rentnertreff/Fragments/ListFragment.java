@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.example.julian.rentnertreff.DatabaseHandler;
 import com.example.julian.rentnertreff.Event;
+import com.example.julian.rentnertreff.EventAdapter;
 import com.example.julian.rentnertreff.R;
 
 import java.util.ArrayList;
@@ -23,9 +24,15 @@ import java.util.List;
 public class ListFragment extends Fragment {
 
     View view;
+    List<Event> event_list;
+    ArrayList<String> title_list;
 
     public ListFragment() {
         // Required empty public constructor
+    }
+
+    public void setList(List<Event> list){
+        this.event_list = list;
     }
 
 
@@ -35,34 +42,23 @@ public class ListFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_list, container, false);
 
-        DatabaseHandler db = new DatabaseHandler(getContext());
+        title_list = new ArrayList<String>();
 
-        /**
-         * CRUD Operations
-         * */
-        // Inserting Contacts
-        Log.d("Insert: ", "Inserting ..");
-        db.addEvent(new Event(1, "Titel", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
-        db.addEvent(new Event(2, "Titel2", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
-        db.addEvent(new Event(3, "Titel3", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
-        db.addEvent(new Event(4, "Titel4", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
-
-
-        // Reading all contacts
-        Log.d("Reading: ", "Reading all contacts..");
-        List<Event> events = db.getAllEventsFromCategory("Natur");
-
-        ArrayList<String> titel = new ArrayList<>();
-
-        for (Event e : events) {
-            titel.add(e.getTitle());
+        for (Event e : event_list) {
+            title_list.add(e.getTitle());
         }
 
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, titel);
         ListView lv = (ListView) view.findViewById(R.id.listView_events);
 
+        //EventAdapter eventAdapter = new EventAdapter(getActivity(), event_list);
+        //lv.setAdapter(eventAdapter);
+
+        ArrayAdapter arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, title_list);
         lv.setAdapter(arrayAdapter);
+
+
+
 
         return view;
     }
