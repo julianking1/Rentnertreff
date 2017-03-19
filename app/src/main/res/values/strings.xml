@@ -51,5 +51,6 @@
     <string name="Nummer">4</string>
     <string name="title_activity_test_jana">TestJana</string>
     <string name="String_Beispiel">Hier steht irgendein anderer Text. Was weiß ich.</string>
+    <string name="String_welcomeText">Herzlich Willkommen bei Rentnertreff. Schön, dass Sie bei uns sind. Bitte melden Sie sich an.</string>
 
 </resources>
