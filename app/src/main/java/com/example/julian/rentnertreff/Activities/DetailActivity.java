@@ -11,9 +11,9 @@ import com.example.julian.rentnertreff.Fragments.DetailSubfragment_reservieren;
 import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Fakten;
 import com.example.julian.rentnertreff.R;
 
-public class DetailFragment extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
 
-    public DetailFragment() {
+    public DetailActivity() {
         // Required empty public constructor
     }
 

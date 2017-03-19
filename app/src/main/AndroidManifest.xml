@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.DetailFragment"
+            android:name=".Activities.DetailActivity"
             android:label="Rentnertreff"
             android:theme="@style/AppTheme.NoActionBar">
 
