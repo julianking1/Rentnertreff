@@ -44,6 +44,7 @@ public class ListFragment extends Fragment {
 
         title_list = new ArrayList<String>();
 
+        //add each title to arraylist
         for (Event e : event_list) {
             title_list.add(e.getTitle());
         }
