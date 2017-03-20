@@ -8,10 +8,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
 
+import com.example.julian.rentnertreff.DatabaseHandler;
+import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.Fragments.KategorieFragment;
 import com.example.julian.rentnertreff.Fragments.MainFragment;
 import com.example.julian.rentnertreff.R;
@@ -40,6 +43,39 @@ public class MainActivity extends AppCompatActivity
         Fragment startFragment = new MainFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, startFragment).commit();
 
+
+
+        //create DBHandler and create mock-data
+
+        DatabaseHandler db = new DatabaseHandler(this);
+
+
+        //delete all items in the database TODO
+        db.deleteAll();
+
+        /**
+         * CRUD Operations
+         * */
+        // Inserting Contacts
+        Log.d("Insert: ", "Inserting ..");
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(2, "Angeln", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(3, "Bowling", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(4, "Kino", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(4, "Kino", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(4, "Spieleabend", "Gehirnjogging" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(4, "Joggen", "Sport" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(4, "Museum", "Kultur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+        db.addEvent(new Event(4, "Shoppen", "Alltag" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2));
+
     }
 
     @Override
@@ -47,6 +83,8 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        } else if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
         } else {
             super.onBackPressed();
         }

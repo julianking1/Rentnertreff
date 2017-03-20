@@ -28,7 +28,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // Events Table Columns names
     private static final String COLUMN_ID = "id";
-    private static final String COLUMN_title = "name";
+    private static final String COLUMN_title = "title";
     private static final String COLUMN_category = "category";
     private static final String COLUMN_description = "description";
     private static final String COLUMN_startTime = "startTime";
@@ -48,7 +48,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_title + " TEXT,"
                 + COLUMN_category + " TEXT," + COLUMN_description  + " TEXT," + COLUMN_startTime
                 + " TEXT,"+ COLUMN_endTime + " TEXT," + COLUMN_participated + " INTEGER,"
-                + COLUMN_participationPlanned + " INTEGER," + COLUMN_price + "REAL)";
+                + COLUMN_participationPlanned + " INTEGER," + COLUMN_price + " REAL)";
         db.execSQL(CREATE_EVENTS_TABLE);
     }
 
@@ -61,7 +61,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Adding new event
-    void addEvent(Event event) {
+    public void addEvent(Event event) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -105,7 +105,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public List<Event> getAllEventsFromCategory(String category) {
         List<Event> eventList = new ArrayList<Event>();
         // Select Query
-        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE CATEGORY = " + category;
+        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE CATEGORY = '" + category + "'";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -131,5 +131,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         // return contact list
         return eventList;
+    }
+
+    public void deleteAll (){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_EVENTS);
     }
 }

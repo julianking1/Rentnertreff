@@ -1,5 +1,7 @@
 package com.example.julian.rentnertreff;
 
+import android.os.Parcelable;
+
 /**
  * Created by Julian on 19.03.2017.
  */
@@ -127,5 +129,6 @@ public class Event {
     public void setPrice(double price) {
         this.price = price;
     }
+
 
 }
