@@ -51,6 +51,7 @@ public class DetailActivity extends AppCompatActivity {
         spec.setIndicator("Beschreibung");
         host.addTab(spec);
 
+        //lol
         //Tab 3
         spec = host.newTabSpec("3");
         spec.setContent(R.id.Tab3);
