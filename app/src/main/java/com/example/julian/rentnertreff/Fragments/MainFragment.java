@@ -52,8 +52,10 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //nur zum testen, eigentlich kommt hier ja die Listview (Jana)
-                Intent intent = new Intent(getActivity(), DetailActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getActivity(), DetailActivity.class);
+                //startActivity(intent);
+                Fragment fragment = new Jana_Test();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("main_fragment").commit();
             }
         });
 
