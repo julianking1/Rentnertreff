@@ -24,18 +24,18 @@
             app:layout_constraintBottom_toTopOf="@+id/button" />
 
         <TextView
-            android:id="@+id/veranstalter"
+            android:id="@+id/preis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:text="Kosten: 5€"
             android:textColor="@color/colorAccent"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/teilnehmer" />
+            app:layout_constraintBottom_toTopOf="@+id/teilnehmer"
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <TextView
             android:id="@+id/teilnehmer"
