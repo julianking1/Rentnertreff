@@ -36,16 +36,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.TestJana"
-            android:label="Rentnertreff"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".Activities.DetailActivity"
             android:label="Rentnertreff"
             android:theme="@style/AppTheme.NoActionBar" />

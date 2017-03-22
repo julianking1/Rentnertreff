@@ -63,6 +63,7 @@ public class DetailActivity extends AppCompatActivity {
             final View tabView = tw.getChildTabViewAt(i);
             final TextView tv = (TextView)tabView.findViewById(android.R.id.title);
             tv.setTextSize(13);
+            tv.setPadding(1,1,1,1);
         }
 
 
