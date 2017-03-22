@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity
 
 
         //delete all items in the database TODO
-        db.deleteAll();
+        //db.deleteAll();
 
         /**
          * CRUD Operations
