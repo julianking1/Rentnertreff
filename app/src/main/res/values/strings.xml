@@ -57,5 +57,8 @@
     <string name="String_Password">Passwort:</string>
     <string name="String_Anmelden">Anmelden</string>
     <string name="String_neuBeiUns">Neu bei uns? Einfach hier registrieren:</string>
+    <string name="String_Name">Name:</string>
+    <string name="String_Ort">Wohnort:</string>
+    <string name="String_Umkreis">Umkreis</string>
 
 </resources>
