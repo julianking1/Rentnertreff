@@ -18,7 +18,8 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
 
                 <LinearLayout
                     android:id="@+id/unterhaltungLayout"
@@ -26,13 +27,13 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/grid_yellow"
+                    android:background="@color/rentner_green"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/img_unterhaltung"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_unterhaltung"
                         app:srcCompat="@drawable/logo" />
@@ -43,6 +44,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/String_unterhaltung"
                         android:textAlignment="center"
+                        android:textColor="@android:color/white"
                         android:textSize="24sp" />
                 </LinearLayout>
 
@@ -52,13 +54,13 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/grid_blue"
+                    android:background="@color/rentner_green"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/img_natur"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_natur"
                         app:srcCompat="@drawable/logo" />
@@ -69,6 +71,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/String_natur"
                         android:textAlignment="center"
+                        android:textColor="@android:color/white"
                         android:textSize="24sp" />
                 </LinearLayout>
             </TableRow>
@@ -83,13 +86,13 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/grid_red"
+                    android:background="@color/rentner_green"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/img_sport"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         android:layout_gravity="center_horizontal"
                         android:contentDescription="@string/content_description_sport"
                         app:srcCompat="@drawable/logo" />
@@ -100,6 +103,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/String_sport"
                         android:textAlignment="center"
+                        android:textColor="@android:color/white"
                         android:textSize="24sp" />
 
                 </LinearLayout>
@@ -110,13 +114,13 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/grid_green"
+                    android:background="@color/rentner_green"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/img_alltag"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_alltag"
                         app:srcCompat="@drawable/logo" />
@@ -126,6 +130,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/String_alltag"
+                        android:textColor="@android:color/white"
                         android:textAlignment="center"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -141,13 +146,13 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/grid_brown"
+                    android:background="@color/rentner_green"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/img_kultur"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_kultur"
                         app:srcCompat="@drawable/logo" />
@@ -157,6 +162,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/String_kultur"
+                        android:textColor="@android:color/white"
                         android:textAlignment="center"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -167,13 +173,13 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/grid_purple"
+                    android:background="@color/rentner_green"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/img_gehirnjogging"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_gehirnjogging"
                         app:srcCompat="@drawable/logo" />
@@ -183,6 +189,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/String_gehirnjogging"
+                        android:textColor="@android:color/white"
+
                         android:textAlignment="center"
                         android:textSize="24sp" />
                 </LinearLayout>
