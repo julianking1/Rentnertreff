@@ -27,7 +27,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/rentner_green"
+                    android:background="@drawable/layout_rounded_corners"
                     android:orientation="vertical">
 
                     <ImageView
@@ -42,10 +42,12 @@
                         android:id="@+id/textView_unterhaltung"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="casual"
                         android:text="@string/String_unterhaltung"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
-                        android:textSize="24sp" />
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -54,7 +56,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/rentner_green"
+                    android:background="@drawable/layout_rounded_corners"
                     android:orientation="vertical">
 
                     <ImageView
@@ -69,10 +71,12 @@
                         android:id="@+id/textView_natur"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="casual"
                         android:text="@string/String_natur"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
-                        android:textSize="24sp" />
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </TableRow>
 
@@ -86,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/rentner_green"
+                    android:background="@drawable/layout_rounded_corners"
                     android:orientation="vertical">
 
                     <ImageView
@@ -101,10 +105,12 @@
                         android:id="@+id/textView_Kategorie"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="casual"
                         android:text="@string/String_sport"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
-                        android:textSize="24sp" />
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -114,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/rentner_green"
+                    android:background="@drawable/layout_rounded_corners"
                     android:orientation="vertical">
 
                     <ImageView
@@ -129,10 +135,12 @@
                         android:id="@+id/textView_demnaechst"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="casual"
                         android:text="@string/String_alltag"
-                        android:textColor="@android:color/white"
                         android:textAlignment="center"
-                        android:textSize="24sp" />
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </TableRow>
 
@@ -146,7 +154,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/rentner_green"
+                    android:background="@drawable/layout_rounded_corners"
                     android:orientation="vertical">
 
                     <ImageView
@@ -161,10 +169,12 @@
                         android:id="@+id/textView_bewertung"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="casual"
                         android:text="@string/String_kultur"
-                        android:textColor="@android:color/white"
                         android:textAlignment="center"
-                        android:textSize="24sp" />
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -173,7 +183,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@color/rentner_green"
+                    android:background="@drawable/layout_rounded_corners"
                     android:orientation="vertical">
 
                     <ImageView
@@ -188,11 +198,13 @@
                         android:id="@+id/textView_meinKalender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="casual"
                         android:text="@string/String_gehirnjogging"
-                        android:textColor="@android:color/white"
 
                         android:textAlignment="center"
-                        android:textSize="24sp" />
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </TableRow>
 
