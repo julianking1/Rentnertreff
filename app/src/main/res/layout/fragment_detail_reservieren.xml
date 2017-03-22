@@ -31,7 +31,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:text="Kosten: 5€"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/teilnehmer"
