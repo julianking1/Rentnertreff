@@ -26,6 +26,7 @@ public class Registrieren_Activity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progressChanged = progress;
+                umkreisView.setText(progressChanged + " km");
             }
 
             @Override
@@ -35,7 +36,7 @@ public class Registrieren_Activity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                umkreisView.setText(progressChanged + " km");
+
             }
         });
     }
