@@ -28,7 +28,8 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/layout_rounded_corners_green"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:translationZ="5dp">
 
                     <ImageView
                         android:id="@+id/img_kategorie"
