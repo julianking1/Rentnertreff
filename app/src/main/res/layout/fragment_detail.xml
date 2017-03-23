@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/common_google_signin_btn_text_light_disabled"
+    android:elevation="5dp"
     tools:context="com.example.julian.rentnertreff.Activities.DetailActivity">
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,7 +15,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
@@ -22,6 +23,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/layout_rounded_corners_green"
+            android:elevation="7dp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -45,7 +47,7 @@
             <FrameLayout
                 android:id="@+id/detail_subcontainer"
                 android:layout_width="147dp"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
@@ -103,12 +105,12 @@
 
         <TabHost
             android:id="@+id/tabHost"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:padding="3dp"
@@ -121,6 +123,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="10dp"
                 android:orientation="vertical">
 
                 <TabWidget
@@ -128,7 +131,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:animateLayoutChanges="false"
-
                     android:background="@drawable/layout_rounded_corners_grey_tab" />
 
                 <FrameLayout
