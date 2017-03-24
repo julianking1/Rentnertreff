@@ -29,7 +29,7 @@ public class EventAdapter extends BaseAdapter{
     public EventAdapter (Context context, List<Event> eventList) {
         // TODO Auto-generated constructor stub
         this.eventList = eventList;
-        context = context;
+        this.context = context;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -65,7 +65,7 @@ public class EventAdapter extends BaseAdapter{
         holder.tv=(TextView) rowView.findViewById(R.id.textView1);
         holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
         holder.tv.setText(eventList.get(position).getTitle());
-        //holder.img.setImageResource(eventList.get(position).getImgID());
+        holder.img.setImageResource(eventList.get(position).getImgID());
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

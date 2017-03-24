@@ -52,11 +52,11 @@ public class ListFragment extends Fragment {
 
         ListView lv = (ListView) view.findViewById(R.id.listView_events);
 
-        //EventAdapter eventAdapter = new EventAdapter(getActivity(), event_list);
-        //lv.setAdapter(eventAdapter);
+        EventAdapter eventAdapter = new EventAdapter(getActivity(), event_list);
+        lv.setAdapter(eventAdapter);
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, title_list);
-        lv.setAdapter(arrayAdapter);
+        //ArrayAdapter arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, title_list);
+        //lv.setAdapter(arrayAdapter);
 
 
 
