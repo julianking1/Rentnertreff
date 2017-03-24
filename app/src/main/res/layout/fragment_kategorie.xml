@@ -192,7 +192,8 @@
                         android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_gehirnjogging"
-                        app:srcCompat="@drawable/gehirn_icon" />
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/gehirn_icon2" />
 
                     <TextView
                         android:id="@+id/textView_meinKalender"
