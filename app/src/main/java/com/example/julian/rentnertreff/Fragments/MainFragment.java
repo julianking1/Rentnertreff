@@ -10,7 +10,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.julian.rentnertreff.Activities.DetailActivity;
+import com.example.julian.rentnertreff.DatabaseHandler;
+import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.R;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +22,9 @@ import com.example.julian.rentnertreff.R;
 public class MainFragment extends Fragment {
 
     View view;
+    List<Event> events;
+    DatabaseHandler db;
+
 
     public MainFragment() {
         // Required empty public constructor
@@ -32,6 +39,8 @@ public class MainFragment extends Fragment {
 
 
         view  = inflater.inflate(R.layout.fragment_main, container, false);
+        db = new DatabaseHandler(getContext());
+
 
         LinearLayout kategorie = (LinearLayout) view.findViewById(R.id.kategorieLayout);
 
@@ -62,9 +71,10 @@ public class MainFragment extends Fragment {
         bewertung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //nur zum testen, eigentlich kommt hier ja die Listview (Jana)
-                Fragment fragment = new ListFragment();
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("main_fragment").commit();
+                events = db.getEventsParticipated();
+                ListFragment listFragment = new ListFragment();
+                listFragment.setList(events);
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });
 

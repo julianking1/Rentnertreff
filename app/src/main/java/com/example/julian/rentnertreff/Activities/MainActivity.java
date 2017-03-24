@@ -59,15 +59,15 @@ public class MainActivity extends AppCompatActivity
         // Inserting Contacts
         Log.d("Insert: ", "Inserting ..");
         db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(2, "Angeln", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(2, "Angeln", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
         db.addEvent(new Event(3, "Bowling", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
         db.addEvent(new Event(4, "Kino", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
         db.addEvent(new Event(4, "Kino", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.logo, 20, 10, 1, 1, 1, "Wanderschuhe"));
