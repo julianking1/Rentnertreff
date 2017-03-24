@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.julian.rentnertreff.Activities.MainActivity;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +55,8 @@ public class EventAdapter extends BaseAdapter{
 
     public class Holder
     {
-        TextView tv;
+        TextView tv1;
+        TextView tv2;
         ImageView img;
     }
     @Override
@@ -62,9 +65,11 @@ public class EventAdapter extends BaseAdapter{
         Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.event_item, null);
-        holder.tv=(TextView) rowView.findViewById(R.id.textView1);
+        holder.tv1=(TextView) rowView.findViewById(R.id.textView1);
+        holder.tv2=(TextView) rowView.findViewById(R.id.textView2);
         holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
-        holder.tv.setText(eventList.get(position).getTitle());
+        holder.tv1.setText(eventList.get(position).getTitle());
+        holder.tv2.setText(eventList.get(position).getPlace() + ", " + eventList.get(position).getStartTime());
         holder.img.setImageResource(eventList.get(position).getImgID());
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
