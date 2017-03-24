@@ -45,9 +45,9 @@ public class ListFragment extends Fragment {
         title_list = new ArrayList<String>();
 
         //add each title to arraylist
-        for (Event e : event_list) {
+        /*for (Event e : event_list) {
             title_list.add(e.getTitle());
-        }
+        }*/
 
 
         ListView lv = (ListView) view.findViewById(R.id.listView_events);
