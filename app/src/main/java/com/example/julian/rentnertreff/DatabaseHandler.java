@@ -18,7 +18,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     // Database Name
     private static final String DATABASE_NAME = "Rentnertreff";
@@ -36,6 +36,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String COLUMN_participated ="participated";
     private static final String COLUMN_participationPlanned ="participationPlanned";
     private static final String COLUMN_price = "price";
+    private static final String COLUMN_place = "place";
+    private static final String COLUMN_imageID = "imgID";
+    private static final String COLUMN_maxMembers = "maxMembers";
+    private static final String COLUMN_members = "members";
+    private static final String COLUMN_food = "food";
+    private static final String COLUMN_disabled = "disabled";
+    private static final String COLUMN_dogs = "dogs";
+    private static final String COLUMN_infos = "info";
 
 
     public DatabaseHandler(Context context) {
@@ -48,7 +56,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_title + " TEXT,"
                 + COLUMN_category + " TEXT," + COLUMN_description  + " TEXT," + COLUMN_startTime
                 + " TEXT,"+ COLUMN_endTime + " TEXT," + COLUMN_participated + " INTEGER,"
-                + COLUMN_participationPlanned + " INTEGER," + COLUMN_price + " REAL)";
+                + COLUMN_participationPlanned + " INTEGER," + COLUMN_price + " REAL," + COLUMN_place + " TEXT,"
+                + COLUMN_imageID + " INTEGER," + COLUMN_maxMembers + " INTEGER," + COLUMN_members + " INTEGER, "
+                + COLUMN_food + " INTEGER," + COLUMN_disabled + " INTEGER," + COLUMN_dogs + " INTEGER," + COLUMN_infos + " TEXT)";
         db.execSQL(CREATE_EVENTS_TABLE);
     }
 
@@ -73,6 +83,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(COLUMN_participated, event.isParticipated());
         values.put(COLUMN_participationPlanned, event.isParticipation_planned());
         values.put(COLUMN_price, event.getPrice());
+        values.put(COLUMN_place, event.getPlace());
+        values.put(COLUMN_imageID, event.getImgID());
+        values.put(COLUMN_maxMembers, event.getMaxMembers());
+        values.put(COLUMN_members, event.getMembers());
+        values.put(COLUMN_food, event.isFood());
+        values.put(COLUMN_disabled, event.isDisabled());
+        values.put(COLUMN_dogs, event.isDogs());
+        values.put(COLUMN_infos, event.getInfo());
 
         // Inserting Row
         db.insert(TABLE_EVENTS, null, values);
@@ -93,7 +111,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         Event event = new Event(Integer.parseInt(cursor.getString(0)),
                 cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5),
-                Integer.parseInt(cursor.getString(6)), Integer.parseInt(cursor.getString(7)), Double.parseDouble(cursor.getString(8)));
+                Integer.parseInt(cursor.getString(6)), Integer.parseInt(cursor.getString(7)), Double.parseDouble(cursor.getString(8)), cursor.getString(9), Integer.parseInt(cursor.getString(10)),
+                Integer.parseInt(cursor.getString(11)), Integer.parseInt(cursor.getString(12)), Integer.parseInt(cursor.getString(13)), Integer.parseInt(cursor.getString(14)), Integer.parseInt(cursor.getString(15)),
+                cursor.getString(16));
 
         // return event
         return event;
@@ -123,6 +143,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 event.setParticipated(Integer.parseInt(cursor.getString(6)));
                 event.setParticipation_planned(Integer.parseInt(cursor.getString(7)));
                 event.setPrice(Double.parseDouble(cursor.getString(8)));
+                event.setPlace(cursor.getString(9));
+                event.setImgID(Integer.parseInt(cursor.getString(10)));
+                event.setMaxMembers(Integer.parseInt(cursor.getString(11)));
+                event.setMembers(Integer.parseInt(cursor.getString(12)));
+                event.setFood(Integer.parseInt(cursor.getString(13)));
+                event.setDisabled(Integer.parseInt(cursor.getString(14)));
+                event.setDogs(Integer.parseInt(cursor.getString(15)));
+                event.setInfo(cursor.getString(16));
 
                 // Adding event to list
                 eventList.add(event);
