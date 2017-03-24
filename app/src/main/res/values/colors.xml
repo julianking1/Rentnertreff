@@ -10,4 +10,6 @@
     <color name="grid_brown">#9f7049</color>
     <color name="grid_purple">#9f73b9</color>
     <color name="rentner_green">#086a25</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

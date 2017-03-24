@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.julian.rentnertreff">
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/icon"
@@ -40,7 +39,7 @@
             android:label="Rentnertreff"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.Registrieren_Activity" />
-        <activity android:name=".Activities.LoginActivity2"></activity>
+        <activity android:name=".Activities.LoginActivity2" />
     </application>
 
 </manifest>

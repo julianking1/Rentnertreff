@@ -36,7 +36,7 @@
                         android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_unterhaltung"
-                        app:srcCompat="@drawable/logo" />
+                        app:srcCompat="@drawable/unterhaltung_icon" />
 
                     <TextView
                         android:id="@+id/textView_unterhaltung"
@@ -65,7 +65,7 @@
                         android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_natur"
-                        app:srcCompat="@drawable/logo" />
+                        app:srcCompat="@drawable/natur_icon" />
 
                     <TextView
                         android:id="@+id/textView_natur"
@@ -99,7 +99,7 @@
                         android:layout_height="120dp"
                         android:layout_gravity="center_horizontal"
                         android:contentDescription="@string/content_description_sport"
-                        app:srcCompat="@drawable/logo" />
+                        app:srcCompat="@drawable/sport_icon" />
 
                     <TextView
                         android:id="@+id/textView_Kategorie"
@@ -129,7 +129,7 @@
                         android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_alltag"
-                        app:srcCompat="@drawable/logo" />
+                        app:srcCompat="@drawable/alltag_icon" />
 
                     <TextView
                         android:id="@+id/textView_demnaechst"
@@ -163,7 +163,7 @@
                         android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_kultur"
-                        app:srcCompat="@drawable/logo" />
+                        app:srcCompat="@drawable/kultur_icon" />
 
                     <TextView
                         android:id="@+id/textView_bewertung"
@@ -192,7 +192,7 @@
                         android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/content_description_gehirnjogging"
-                        app:srcCompat="@drawable/logo" />
+                        app:srcCompat="@drawable/gehirn_icon" />
 
                     <TextView
                         android:id="@+id/textView_meinKalender"
