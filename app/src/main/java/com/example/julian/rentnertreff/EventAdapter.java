@@ -1,6 +1,9 @@
 package com.example.julian.rentnertreff;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.julian.rentnertreff.Activities.MainActivity;
+import com.example.julian.rentnertreff.Fragments.*;
+import com.example.julian.rentnertreff.Fragments.ListFragment;
 
 import org.w3c.dom.Text;
 
@@ -63,7 +68,7 @@ public class EventAdapter extends BaseAdapter{
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         Holder holder=new Holder();
-        View rowView;
+        final View rowView;
         rowView = inflater.inflate(R.layout.event_item, null);
         holder.tv1=(TextView) rowView.findViewById(R.id.textView1);
         holder.tv2=(TextView) rowView.findViewById(R.id.textView2);
@@ -71,11 +76,19 @@ public class EventAdapter extends BaseAdapter{
         holder.tv1.setText(eventList.get(position).getTitle());
         holder.tv2.setText(eventList.get(position).getPlace() + ", " + eventList.get(position).getStartTime());
         holder.img.setImageResource(eventList.get(position).getImgID());
+
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+eventList.get(position).getTitle(), Toast.LENGTH_LONG).show();
+
+                Event event = eventList.get(position);
+                Jana_Test fragment = new Jana_Test();
+                fragment.setEvent(event);
+                FragmentManager fm = ((AppCompatActivity)context).getSupportFragmentManager();
+                fm.beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack("list_fragment").commit();
+
+                //Toast.makeText(context, "You Clicked "+eventList.get(position).getTitle(), Toast.LENGTH_LONG).show();
             }
         });
         return rowView;

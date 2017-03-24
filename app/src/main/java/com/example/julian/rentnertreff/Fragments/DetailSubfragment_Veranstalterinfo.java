@@ -1,5 +1,6 @@
 package com.example.julian.rentnertreff.Fragments;
 
+import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,11 +15,19 @@ import static com.example.julian.rentnertreff.R.id.ratingBar;
 
 public class DetailSubfragment_Veranstalterinfo extends Fragment implements RatingBar.OnRatingBarChangeListener{
 
+    //Variablen
     private View view;
     private RatingBar bar;
+    public Event event;
+
 
     public DetailSubfragment_Veranstalterinfo() {
         // Required empty public constructor
+    }
+
+    //Eventübergabe
+    public void setEvent(Event event){
+        this.event = event;
     }
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {

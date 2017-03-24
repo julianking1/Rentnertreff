@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Beschreibung;
 import com.example.julian.rentnertreff.Fragments.DetailSubfragment_Veranstalterinfo;
 import com.example.julian.rentnertreff.Fragments.DetailSubfragment_reservieren;
@@ -19,19 +21,48 @@ import com.example.julian.rentnertreff.R;
 
 public class Jana_Test extends Fragment {
 
+    //Variablen
     private View view;
+    private TextView title;
+    private TextView time;
+    private TextView place;
+    private ImageView img;
     private TabHost host;
+    private Event event;
+
 
     public Jana_Test() {
         // Required empty public constructor
     }
 
+    //Eventübergabe
+    public void setEvent(Event event){
+        this.event = event;
+    }
+
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
+
+        //View ierzeugen
         view = inflater.inflate(R.layout.fragment_detail, container, false);
 
-        Fragment fragment = new DetailSubfragment_reservieren();
-        getFragmentManager().beginTransaction().add(R.id.detail_subcontainer, fragment).commit();
+        //Layout in Variablen speichern
+        title = (TextView) view.findViewById(R.id.title);
+        time = (TextView) view.findViewById(R.id.time);
+        place = (TextView) view.findViewById(R.id.place);
+        img = (ImageView) view.findViewById(R.id.imageEvent);
+        host = (TabHost)view.findViewById(R.id.tabHost);
 
+        //Werte einfügen
+        title.setText(event.getTitle());
+        time.setText(event.getStartTime());
+        place.setText(event.getPlace());
+        img.setImageResource(event.getImgID());
+
+        //Aktion einfügen
+        Fragment fragmentAktion = new DetailSubfragment_reservieren();
+        getFragmentManager().beginTransaction().add(R.id.aktion, fragmentAktion).commit();
+
+        //TabHost Konfiguation
         host = (TabHost)view.findViewById(R.id.tabHost);
         host.setup();
         host.getTabWidget().setVisibility(View.VISIBLE);
@@ -64,7 +95,7 @@ public class Jana_Test extends Fragment {
             tv.setPadding(1,1,1,1);
         }
 
-
+        //Fragments in Tabs laden
         Fragment fragment1 = new DetailSubfragment_Fakten();
         getFragmentManager().beginTransaction().add(R.id.content_tab1, fragment1).commit();
         Fragment fragment2 = new DetailSubfragment_Beschreibung();
@@ -72,7 +103,7 @@ public class Jana_Test extends Fragment {
         Fragment fragment3 = new DetailSubfragment_Veranstalterinfo();
         getFragmentManager().beginTransaction().add(R.id.content_tab3, fragment3).commit();
 
-        //vorichtshalber noch da.
+        //vorichtshalber noch da
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String arg0) {

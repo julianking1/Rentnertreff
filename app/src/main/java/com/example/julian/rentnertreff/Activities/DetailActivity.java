@@ -30,7 +30,7 @@ public class DetailActivity extends AppCompatActivity {
 
         //hier wird das SubFragment eingefügt
         Fragment fragment = new DetailSubfragment_reservieren();
-        getSupportFragmentManager().beginTransaction().add(R.id.detail_subcontainer, fragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.aktion, fragment).commit();
 
 
         //Tabhost

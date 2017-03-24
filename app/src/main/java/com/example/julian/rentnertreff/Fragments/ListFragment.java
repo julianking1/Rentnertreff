@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -21,11 +22,13 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListFragment extends Fragment {
+public class ListFragment extends Fragment{
 
     View view;
     List<Event> event_list;
     ArrayList<String> title_list;
+    EventAdapter eventAdapter;
+
 
     public ListFragment() {
         // Required empty public constructor
@@ -52,8 +55,12 @@ public class ListFragment extends Fragment {
 
         ListView lv = (ListView) view.findViewById(R.id.listView_events);
 
-        EventAdapter eventAdapter = new EventAdapter(getActivity(), event_list);
+        eventAdapter = new EventAdapter(getActivity(), event_list);
         lv.setAdapter(eventAdapter);
+
+
+
+
 
         //ArrayAdapter arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, title_list);
         //lv.setAdapter(arrayAdapter);
@@ -63,5 +70,6 @@ public class ListFragment extends Fragment {
 
         return view;
     }
+
 
 }

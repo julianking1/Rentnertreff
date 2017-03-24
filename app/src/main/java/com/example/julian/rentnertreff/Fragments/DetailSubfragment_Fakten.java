@@ -8,15 +8,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.R;
 
 
 public class DetailSubfragment_Fakten extends Fragment {
 
+    //Variablen
+    public Event event;
+
     public DetailSubfragment_Fakten() {
         // Required empty public constructor
     }
 
+    //Eventübergabe
+    public void setEvent(Event event){
+        this.event = event;
+    }
 
 
     @Override
