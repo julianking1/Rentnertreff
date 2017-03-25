@@ -59,7 +59,8 @@ public class Jana_Test extends Fragment {
         img.setImageResource(event.getImgID());
 
         //Aktion einfügen
-        Fragment fragmentAktion = new DetailSubfragment_reservieren();
+        DetailSubfragment_reservieren fragmentAktion = new DetailSubfragment_reservieren();
+        fragmentAktion.setEvent(event);
         getFragmentManager().beginTransaction().add(R.id.aktion, fragmentAktion).commit();
 
         //TabHost Konfiguation
@@ -96,11 +97,16 @@ public class Jana_Test extends Fragment {
         }
 
         //Fragments in Tabs laden
-        Fragment fragment1 = new DetailSubfragment_Fakten();
+        DetailSubfragment_Fakten fragment1 = new DetailSubfragment_Fakten();
+        fragment1.setEvent(event);
         getFragmentManager().beginTransaction().add(R.id.content_tab1, fragment1).commit();
-        Fragment fragment2 = new DetailSubfragment_Beschreibung();
+
+        DetailSubfragment_Beschreibung fragment2 = new DetailSubfragment_Beschreibung();
+        fragment2.setEvent(event);
         getFragmentManager().beginTransaction().add(R.id.content_tab2, fragment2).commit();
-        Fragment fragment3 = new DetailSubfragment_Veranstalterinfo();
+
+        DetailSubfragment_Veranstalterinfo fragment3 = new DetailSubfragment_Veranstalterinfo();
+        fragment3.setEvent(event);
         getFragmentManager().beginTransaction().add(R.id.content_tab3, fragment3).commit();
 
         //vorichtshalber noch da
