@@ -52,7 +52,7 @@
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <TextView
-            android:id="@+id/anzahlPlätze"
+            android:id="@+id/anzahlTeilnehmer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -61,11 +61,11 @@
             android:text="14"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/anzahlTeilnehmer"
+            app:layout_constraintBottom_toTopOf="@+id/anzahlPlätze"
             app:layout_constraintLeft_toRightOf="@+id/teilnehmer" />
 
         <TextView
-            android:id="@+id/anzahlTeilnehmer"
+            android:id="@+id/anzahlPlätze"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -79,17 +79,18 @@
 
         <Button
             android:id="@+id/button"
+            style="@android:style/Widget.Holo.Button"
             android:layout_width="wrap_content"
             android:layout_height="52dp"
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:elevation="5dp"
+            android:elevation="7dp"
             android:text="@string/String_Reservieren"
+            android:textColor="@android:color/white"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-
             app:layout_constraintRight_toRightOf="parent" />
     </android.support.constraint.ConstraintLayout>
 

@@ -35,24 +35,36 @@ public class DetailSubfragment_reservieren extends Fragment {
 
         //Layouts holen
         preis = (TextView) view.findViewById(R.id.preis);
+        freie = (TextView) view.findViewById(R.id.anzahlPlätze);
         teilnehmer = (TextView) view.findViewById(R.id.anzahlTeilnehmer);
-        freie = (TextView) view.findViewById(R.id.freiePlaetze);
 
         //Strings einfügen
-        preis.setText("Preis: " + event.getPrice()+ "0 €");
+        preis.setText("Preis: " + (int) event.getPrice()+ " €");
         int members = event.getMembers();
         int max = event.getMaxMembers();
-        freie.setText("Freie Plätze: " + (members));
-        teilnehmer.setText("Teilnehmer: "+ max);
+        freie.setText(""+ (max - members));
+        teilnehmer.setText(""+  members);
 
         button= (Button) view.findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                button.setText("Läuft");
-                //event.setParticipation_planned(0);
-                //event.setMembers(event.getMembers()+1);
-                freie.setText("aha");
+
+                if(event.isParticipation_planned()==0) {
+                    //prüfen ob maxTeilnehmerzahl erreicht wurde
+                    event.setParticipation_planned(1);
+                    freie.setText(""+(event.getMembers()-1));
+                    teilnehmer.setText(""+(event.getMembers()+1));
+                    //in DB
+                    button.setText("Abmelden");
+                }else{
+                    event.setParticipation_planned(0);
+                    freie.setText(""+(event.getMembers()));
+                    teilnehmer.setText(""+(event.getMembers()));
+                    //in DB
+                    button.setText("Reservieren");
+                }
+
             }
         });
 
