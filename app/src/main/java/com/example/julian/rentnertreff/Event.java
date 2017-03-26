@@ -25,6 +25,7 @@ public class Event {
     private boolean disabled;
     private boolean dogs;
     private String info;
+    //private int rating;
 
 
     //empty constructor
@@ -82,7 +83,7 @@ public class Event {
         if(dogs==1) this.dogs = true;
         else this.dogs = false;
 
-        this.info=info;
+        this.info = info;
     }
 
 
@@ -232,4 +233,5 @@ public class Event {
     public void setInfo(String info) {
         this.info = info;
     }
+
 }

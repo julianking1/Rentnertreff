@@ -46,20 +46,31 @@ public class DetailSubfragment_reservieren extends Fragment {
         teilnehmer.setText(""+  members);
 
         button= (Button) view.findViewById(R.id.button);
+        if(event.isParticipation_planned()== 0) {
+            button.setText("Reservieren");
+        }else{
+            button.setText("Abmelden");
+        }
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(event.isParticipation_planned()==0) {
+                if(event.isParticipation_planned()== 0) {
                     //prüfen ob maxTeilnehmerzahl erreicht wurde
                     event.setParticipation_planned(1);
-                    freie.setText(""+(event.getMembers()-1));
-                    teilnehmer.setText(""+(event.getMembers()+1));
+                    int neuMembers = event.getMembers()+1;
+                    event.setMembers(neuMembers);
+                    neuMembers = event.getMembers();
+                    freie.setText(""+(event.getMaxMembers()- neuMembers));
+                    teilnehmer.setText("" + neuMembers);
                     //in DB
                     button.setText("Abmelden");
                 }else{
                     event.setParticipation_planned(0);
-                    freie.setText(""+(event.getMembers()));
+                    int neuMembers = event.getMembers()-1;
+                    event.setMembers(neuMembers);
+                    freie.setText(""+ (event.getMaxMembers()- neuMembers));
                     teilnehmer.setText(""+(event.getMembers()));
                     //in DB
                     button.setText("Reservieren");

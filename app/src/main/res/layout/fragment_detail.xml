@@ -94,8 +94,8 @@
 
             <FrameLayout
                 android:id="@+id/aktion"
-                android:layout_width="147dp"
-                android:layout_height="0dp"
+                android:layout_width="199dp"
+                android:layout_height="174dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
@@ -106,7 +106,8 @@
                 app:layout_constraintLeft_toRightOf="@+id/imageEvent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="142dp">
 
             </FrameLayout>
         </android.support.constraint.ConstraintLayout>

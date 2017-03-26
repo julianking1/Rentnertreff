@@ -42,7 +42,7 @@ public class Jana_Test extends Fragment {
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
 
-        //View ierzeugen
+        //View erzeugen
         view = inflater.inflate(R.layout.fragment_detail, container, false);
 
         //Layout in Variablen speichern
@@ -59,9 +59,15 @@ public class Jana_Test extends Fragment {
         img.setImageResource(event.getImgID());
 
         //Aktion einfügen
-        DetailSubfragment_reservieren fragmentAktion = new DetailSubfragment_reservieren();
-        fragmentAktion.setEvent(event);
-        getFragmentManager().beginTransaction().add(R.id.aktion, fragmentAktion).commit();
+        if(event.isParticipated() == 1){
+            DetailSubfragment_bewerten fragmentAktion = new DetailSubfragment_bewerten();
+            fragmentAktion.setEvent(event);
+            getFragmentManager().beginTransaction().add(R.id.aktion, fragmentAktion).commit();
+        }else{
+            DetailSubfragment_reservieren fragmentAktion = new DetailSubfragment_reservieren();
+            fragmentAktion.setEvent(event);
+            getFragmentManager().beginTransaction().add(R.id.aktion, fragmentAktion).commit();
+        }
 
         //TabHost Konfiguation
         host = (TabHost)view.findViewById(R.id.tabHost);

@@ -44,6 +44,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String COLUMN_disabled = "disabled";
     private static final String COLUMN_dogs = "dogs";
     private static final String COLUMN_infos = "info";
+    //private static final String COLUMN_rating = "rating";
 
 
     public DatabaseHandler(Context context) {
@@ -91,6 +92,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(COLUMN_disabled, event.isDisabled());
         values.put(COLUMN_dogs, event.isDogs());
         values.put(COLUMN_infos, event.getInfo());
+        //values.put(COLUMN_rating, event.getRating());
 
         // Inserting Row
         db.insert(TABLE_EVENTS, null, values);
@@ -157,6 +159,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 event.setDisabled(Integer.parseInt(cursor.getString(14)));
                 event.setDogs(Integer.parseInt(cursor.getString(15)));
                 event.setInfo(cursor.getString(16));
+                //event.setRating(17);
 
                 // Adding event to list
                 eventList.add(event);
@@ -196,6 +199,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 event.setDisabled(Integer.parseInt(cursor.getString(14)));
                 event.setDogs(Integer.parseInt(cursor.getString(15)));
                 event.setInfo(cursor.getString(16));
+                //event.setRating(Integer.parseInt(cursor.getString(17)));
 
                 // Adding event to list
                 eventList.add(event);
