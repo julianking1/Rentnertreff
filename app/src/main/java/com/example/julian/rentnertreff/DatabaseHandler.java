@@ -25,7 +25,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
 
     // Database Name
     private static final String DATABASE_NAME = "Rentnertreff";
@@ -51,7 +51,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String COLUMN_disabled = "disabled";
     private static final String COLUMN_dogs = "dogs";
     private static final String COLUMN_infos = "info";
-    //private static final String COLUMN_rating = "rating";
+    private static final String COLUMN_rating = "rating";
 
 
     public DatabaseHandler(Context context) {
@@ -66,7 +66,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + " TEXT,"+ COLUMN_endTime + " TEXT," + COLUMN_participated + " INTEGER,"
                 + COLUMN_participationPlanned + " INTEGER," + COLUMN_price + " REAL," + COLUMN_place + " TEXT,"
                 + COLUMN_imageID + " INTEGER," + COLUMN_maxMembers + " INTEGER," + COLUMN_members + " INTEGER, "
-                + COLUMN_food + " INTEGER," + COLUMN_disabled + " INTEGER," + COLUMN_dogs + " INTEGER," + COLUMN_infos + " TEXT)";
+                + COLUMN_food + " INTEGER," + COLUMN_disabled + " INTEGER," + COLUMN_dogs + " INTEGER," + COLUMN_infos + " TEXT," + COLUMN_rating + " INTEGER)";
         db.execSQL(CREATE_EVENTS_TABLE);
     }
 
@@ -99,7 +99,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(COLUMN_disabled, event.isDisabled());
         values.put(COLUMN_dogs, event.isDogs());
         values.put(COLUMN_infos, event.getInfo());
-        //values.put(COLUMN_rating, event.getRating());
+        values.put(COLUMN_rating, event.getRating());
 
         // Inserting Row
         db.insert(TABLE_EVENTS, null, values);
@@ -128,7 +128,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5),
                 Integer.parseInt(cursor.getString(6)), Integer.parseInt(cursor.getString(7)), Double.parseDouble(cursor.getString(8)), cursor.getString(9), Integer.parseInt(cursor.getString(10)),
                 Integer.parseInt(cursor.getString(11)), Integer.parseInt(cursor.getString(12)), Integer.parseInt(cursor.getString(13)), Integer.parseInt(cursor.getString(14)), Integer.parseInt(cursor.getString(15)),
-                cursor.getString(16));
+                cursor.getString(16), Integer.parseInt(cursor.getString(17)));
 
         // return event
         return event;
@@ -166,7 +166,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 event.setDisabled(Integer.parseInt(cursor.getString(14)));
                 event.setDogs(Integer.parseInt(cursor.getString(15)));
                 event.setInfo(cursor.getString(16));
-                //event.setRating(17);
+                event.setRating(Integer.parseInt(cursor.getString(17)));
 
                 // Adding event to list
                 eventList.add(event);
@@ -206,7 +206,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 event.setDisabled(Integer.parseInt(cursor.getString(14)));
                 event.setDogs(Integer.parseInt(cursor.getString(15)));
                 event.setInfo(cursor.getString(16));
-                //event.setRating(Integer.parseInt(cursor.getString(17)));
+                event.setRating(Integer.parseInt(cursor.getString(17)));
 
                 // Adding event to list
                 eventList.add(event);
@@ -246,7 +246,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 event.setDisabled(Integer.parseInt(cursor.getString(14)));
                 event.setDogs(Integer.parseInt(cursor.getString(15)));
                 event.setInfo(cursor.getString(16));
-                //event.setRating(Integer.parseInt(cursor.getString(17)));
+                event.setRating(Integer.parseInt(cursor.getString(17)));
 
                 // Adding event to list
                 eventList.add(event);
@@ -295,7 +295,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 event.setDisabled(Integer.parseInt(cursor.getString(14)));
                 event.setDogs(Integer.parseInt(cursor.getString(15)));
                 event.setInfo(cursor.getString(16));
-                //event.setRating(Integer.parseInt(cursor.getString(17)));
+                event.setRating(Integer.parseInt(cursor.getString(17)));
 
                 // Adding event to list
                 eventList.add(event);

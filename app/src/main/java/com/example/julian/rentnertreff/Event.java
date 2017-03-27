@@ -25,14 +25,14 @@ public class Event {
     private boolean disabled;
     private boolean dogs;
     private String info;
-    //private int rating;
+    private int rating;
 
 
     //empty constructor
     public Event (){}
 
     //constructor
-    public Event (int id, String title, String category, String description, String startTime, String endTime, boolean participation_planned, boolean participated, double price, String place, int imgID, int maxMembers, int members, boolean food, boolean disabled, boolean dogs, String info){
+    public Event (int id, String title, String category, String description, String startTime, String endTime, boolean participation_planned, boolean participated, double price, String place, int imgID, int maxMembers, int members, boolean food, boolean disabled, boolean dogs, String info, int rating){
         this.id=id;
         this.title=title;
         this.category=category;
@@ -50,10 +50,11 @@ public class Event {
         this.disabled=disabled;
         this.dogs=dogs;
         this.info=info;
+        this.rating = rating;
     }
 
     //constructor with 1 und 0 for true and false
-    public Event (int id, String title, String category, String description, String startTime, String endTime, int participation_planned, int participated, double price, String place, int imgID, int maxMembers, int members, int food, int disabled, int dogs, String info){
+    public Event (int id, String title, String category, String description, String startTime, String endTime, int participation_planned, int participated, double price, String place, int imgID, int maxMembers, int members, int food, int disabled, int dogs, String info, int rating){
         this.id=id;
         this.title=title;
         this.category=category;
@@ -84,6 +85,7 @@ public class Event {
         else this.dogs = false;
 
         this.info = info;
+        this.rating = rating;
     }
 
 
@@ -234,4 +236,11 @@ public class Event {
         this.info = info;
     }
 
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
 }
