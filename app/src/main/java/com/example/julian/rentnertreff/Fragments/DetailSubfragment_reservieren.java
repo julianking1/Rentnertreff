@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.julian.rentnertreff.DatabaseHandler;
 import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.R;
 
@@ -20,6 +21,7 @@ public class DetailSubfragment_reservieren extends Fragment {
     private TextView preis;
     private TextView  teilnehmer;
     private TextView freie;
+    DatabaseHandler db;
 
     public DetailSubfragment_reservieren() {
         // Required empty public constructor
@@ -32,6 +34,8 @@ public class DetailSubfragment_reservieren extends Fragment {
 
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_detail_reservieren, container, false);
+
+        db = new DatabaseHandler(getActivity());
 
         //Layouts holen
         preis = (TextView) view.findViewById(R.id.preis);
@@ -64,7 +68,8 @@ public class DetailSubfragment_reservieren extends Fragment {
                     neuMembers = event.getMembers();
                     freie.setText(""+(event.getMaxMembers()- neuMembers));
                     teilnehmer.setText("" + neuMembers);
-                    //in DB
+                    db.updateEvent(event);
+
                     button.setText("Abmelden");
                 }else{
                     event.setParticipation_planned(0);
@@ -72,12 +77,13 @@ public class DetailSubfragment_reservieren extends Fragment {
                     event.setMembers(neuMembers);
                     freie.setText(""+ (event.getMaxMembers()- neuMembers));
                     teilnehmer.setText(""+(event.getMembers()));
-                    //in DB
+                    db.updateEvent(event);
                     button.setText("Reservieren");
                 }
 
             }
         });
+
 
 
 

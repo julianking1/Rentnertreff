@@ -43,11 +43,10 @@ public class MainFragment extends Fragment {
 
 
         LinearLayout kategorie = (LinearLayout) view.findViewById(R.id.kategorieLayout);
-
-        //die folgenden 3 habe ich ergänzt (Jana)
         LinearLayout demnaechst = (LinearLayout) view.findViewById(R.id. DemnaechstLayout);
         LinearLayout meinKalender = (LinearLayout) view.findViewById(R.id. MeinKalender_Layout);
         LinearLayout bewertung = (LinearLayout) view.findViewById(R.id. Bewertung_Layout);
+
 
         kategorie.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +72,18 @@ public class MainFragment extends Fragment {
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });
+
+        meinKalender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                events = db.getEventsParticipationPlanned();
+                ListFragment listFragment = new ListFragment();
+                listFragment.setList(events);
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
+            }
+        });
+
+
 
 
 

@@ -16,11 +16,18 @@ import android.widget.TabHost;
 import com.example.julian.rentnertreff.DatabaseHandler;
 import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.Fragments.KategorieFragment;
+import com.example.julian.rentnertreff.Fragments.ListFragment;
 import com.example.julian.rentnertreff.Fragments.MainFragment;
 import com.example.julian.rentnertreff.R;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    List<Event> events;
+    DatabaseHandler db;
 
 
     @Override
@@ -47,7 +54,7 @@ public class MainActivity extends AppCompatActivity
 
         //create DBHandler and create mock-data
 
-        DatabaseHandler db = new DatabaseHandler(this);
+        db = new DatabaseHandler(this);
 
 
         //delete all items in the database TODO
@@ -71,10 +78,27 @@ public class MainActivity extends AppCompatActivity
         db.addEvent(new Event(3, "Bowling", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.bowling_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
         db.addEvent(new Event(4, "Kino", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.kino_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
         db.addEvent(new Event(4, "Kino", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.kino_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(4, "Spieleabend", "Gehirnjogging" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.2, "Karlsruhe", R.drawable.spiele_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(4, "Spieleabend", "Gehirnjogging" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.spiele_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
         db.addEvent(new Event(4, "Joggen", "Sport" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.joggen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
         db.addEvent(new Event(4, "Museum", "Kultur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.museum_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(4, "Shoppen", "Alltag" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 1, 5.20, "Karlsruhe", R.drawable.shoppen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(4, "Shoppen", "Alltag" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.shoppen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 1, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(2, "Angeln", "Natur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(3, "Bowling", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.bowling_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(4, "Kino", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.kino_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(4, "Kino", "Unterhaltung" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.kino_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(4, "Spieleabend", "Gehirnjogging" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.spiele_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(4, "Joggen", "Sport" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.joggen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(4, "Museum", "Kultur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.museum_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(4, "Shoppen", "Alltag" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.20, "Karlsruhe", R.drawable.shoppen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
 
     }
 
@@ -119,21 +143,32 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //auf mainFRagment initialisiert, falls keines ausgeählt werden kann
-        Fragment fragment = new MainFragment();
 
         if (id == R.id.nav_kategorie) {
-            fragment = new KategorieFragment();
+            Fragment fragment = new KategorieFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+
         } else if (id == R.id.nav_demnaechst) {
 
+
         } else if (id == R.id.nav_bewertung) {
+            events = db.getEventsParticipated();
+            ListFragment fragment = new ListFragment();
+            fragment.setList(events);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         } else if (id == R.id.nav_meinKalender) {
+            events = db.getEventsParticipationPlanned();
+            ListFragment fragment = new ListFragment();
+            fragment.setList(events);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         } else {
-            fragment = new MainFragment();
+            Fragment fragment = new MainFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+
         }
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
