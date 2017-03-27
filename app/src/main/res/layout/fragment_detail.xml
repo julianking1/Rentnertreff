@@ -15,13 +15,16 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/headInfo"
-            android:layout_width="360dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/layout_rounded_right"
             android:elevation="7dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0">
 
             <TextView
                 android:id="@+id/title"
@@ -67,15 +70,15 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="377dp"
+            android:layout_width="0dp"
             android:layout_height="191dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/layout_rounded_left_green"
             android:elevation="8dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/headInfo"
-            tools:layout_editor_absoluteX="34dp">
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent">
 
             <ImageView
                 android:id="@+id/imageEvent"
@@ -94,7 +97,7 @@
 
             <FrameLayout
                 android:id="@+id/aktion"
-                android:layout_width="199dp"
+                android:layout_width="0dp"
                 android:layout_height="174dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
@@ -120,7 +123,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:elevation="0dp"
             android:padding="3dp"
             app:layout_constraintHorizontal_bias="0.0"
