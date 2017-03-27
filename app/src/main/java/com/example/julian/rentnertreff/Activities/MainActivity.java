@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity
         db.addEvent(new Event(4, "Spieleabend", "Gehirnjogging" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.2, "Karlsruhe", R.drawable.spiele_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
         db.addEvent(new Event(4, "Joggen", "Sport" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.joggen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
         db.addEvent(new Event(4, "Museum", "Kultur" , "BEschreibung" , "2017-03-18" , "2017-03-18", 0, 0, 5.20, "Karlsruhe", R.drawable.museum_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
-        db.addEvent(new Event(4, "Shoppen", "Alltag" , "BEschreibung" , "2017-03-18" , "2017-03-18", 1, 0, 5.20, "Karlsruhe", R.drawable.shoppen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
+        db.addEvent(new Event(4, "Shoppen", "Alltag" , "BEschreibung" , "2017-03-28" , "2017-03-28", 1, 0, 5.20, "Karlsruhe", R.drawable.shoppen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe"));
 
     }
 
@@ -149,7 +149,10 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         } else if (id == R.id.nav_demnaechst) {
-
+            events = db.getComingEvents();
+            ListFragment listFragment = new ListFragment();
+            listFragment.setList(events);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
 
         } else if (id == R.id.nav_bewertung) {
             events = db.getEventsParticipated();

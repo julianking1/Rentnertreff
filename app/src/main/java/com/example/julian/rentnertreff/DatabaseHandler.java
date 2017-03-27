@@ -6,8 +6,15 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.text.format.DateUtils;
 
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.ParsePosition;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -214,6 +221,55 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         List<Event> eventList = new ArrayList<Event>();
         // Select Query
         String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE participationPlanned = 1";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Event event = new Event();
+                event.setId(Integer.parseInt(cursor.getString(0)));
+                event.setTitle(cursor.getString(1));
+                event.setCategory(cursor.getString(2));
+                event.setDescription(cursor.getString(3));
+                event.setStartTime(cursor.getString(4));
+                event.setEndTime(cursor.getString(5));
+                event.setParticipated(Integer.parseInt(cursor.getString(6)));
+                event.setParticipation_planned(Integer.parseInt(cursor.getString(7)));
+                event.setPrice(Double.parseDouble(cursor.getString(8)));
+                event.setPlace(cursor.getString(9));
+                event.setImgID(Integer.parseInt(cursor.getString(10)));
+                event.setMaxMembers(Integer.parseInt(cursor.getString(11)));
+                event.setMembers(Integer.parseInt(cursor.getString(12)));
+                event.setFood(Integer.parseInt(cursor.getString(13)));
+                event.setDisabled(Integer.parseInt(cursor.getString(14)));
+                event.setDogs(Integer.parseInt(cursor.getString(15)));
+                event.setInfo(cursor.getString(16));
+                //event.setRating(Integer.parseInt(cursor.getString(17)));
+
+                // Adding event to list
+                eventList.add(event);
+            } while (cursor.moveToNext());
+        }
+
+        // return contact list
+        return eventList;
+    }
+
+    public List<Event> getComingEvents() {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, 3);
+        String date = df.format(cal.getTime());
+
+        Date current = new Date();
+        String currentDate = df.format(current);
+
+
+        List<Event> eventList = new ArrayList<Event>();
+        // Select Query
+        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE startTime BETWEEN '" + currentDate + "' AND '" + date + "'";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

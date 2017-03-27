@@ -59,8 +59,10 @@ public class MainFragment extends Fragment {
         demnaechst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //fehlt noch
-            }
+                events = db.getComingEvents();
+                ListFragment listFragment = new ListFragment();
+                listFragment.setList(events);
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();            }
         });
 
         bewertung.setOnClickListener(new View.OnClickListener() {
