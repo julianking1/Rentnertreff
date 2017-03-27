@@ -27,7 +27,7 @@ public class DetailSubfragment_bewerten extends Fragment {
         // Required empty public constructor
     }
 
-    //Eventübergabe
+    //Eventübergab
     public void setEvent(Event event) {
         this.event = event;
     }
