@@ -54,12 +54,12 @@ public class DetailSubfragment_Fakten extends Fragment {
             strEssen = "Verpflegung inklusive";
         }
         if(event.isDisabled()==1){
-            strRollstuhlgerecht = "Rollstuhlgerecht Veranstaltung";
+            strRollstuhlgerecht = "Rollstuhlgerechte Veranstaltung";
         } else{
-            strRollstuhlgerecht = "Die Veranstaltung ist nicht rollstuhlgerecht.";
+            strRollstuhlgerecht = "nicht rollstuhlgerecht";
         }
         if(event.isDogs()==1){
-            strHaustiere = "Hunde dürfen mitgebracht werden.";
+            strHaustiere = "Hunde sind erlaubt";
         } else{
             strHaustiere= "Es sind keine Hunde erlaubt";
         }
