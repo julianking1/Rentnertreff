@@ -83,11 +83,15 @@ public class MainFragment extends Fragment {
         meinKalender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*
                 events = db.getEventsParticipationPlanned();
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
                 getActivity().setTitle("Mein Kalender");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
+                */
+                Fragment fragment = new Calender();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("main_fragment").commit();
             }
         });
 

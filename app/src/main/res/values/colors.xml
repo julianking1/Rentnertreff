@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#086a25</color>
-    <color name="colorPrimaryDark">#054a19</color>
+    <color name="colorPrimaryDark">#FF054A19</color>
     <color name="colorAccent">#FF69DF45</color>
     <color name="grid_blue">#7397b9</color>
     <color name="grid_red">#cc8689</color>

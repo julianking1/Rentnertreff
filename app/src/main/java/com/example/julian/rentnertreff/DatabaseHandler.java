@@ -314,6 +314,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return eventList;
     }
 
+    /*
+    public List<Event> getCertainEvents( DATUM ) {
+
+        Hier werden die Events eines bestimmten Datums geholt
+
+    }*/
+
     public void deleteAll (){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_EVENTS);
