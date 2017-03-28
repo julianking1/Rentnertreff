@@ -43,7 +43,7 @@ public class Calender extends Fragment {
 
             @Override
             public void onSelectedDayChange(CalendarView cv, int y, int m, int d) {
-                String date = ""+y+"-"+m+"-"+d;
+                String date = ""+y+"-"+(m+1)+"-"+d;
                 TextView tv = (TextView) view.findViewById(R.id.text);
                 tv.setText("Hier eine nützliche Info"+date);
 
