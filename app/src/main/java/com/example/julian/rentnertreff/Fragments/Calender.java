@@ -11,6 +11,7 @@ import android.widget.CalendarView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.julian.rentnertreff.DatabaseHandler;
 import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.EventAdapter;
 import com.example.julian.rentnertreff.R;
@@ -23,6 +24,8 @@ public class Calender extends Fragment {
 
     private View view;
     private CalendarView calendar;
+    DatabaseHandler db;
+    List<Event> events;
 
     public Calender() {
         // Required empty public constructor
@@ -34,6 +37,7 @@ public class Calender extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_calender, container, false);
         calendar = (CalendarView) view.findViewById(R.id.calendarView);
+        db = new DatabaseHandler(getContext());
 
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
 
@@ -43,6 +47,10 @@ public class Calender extends Fragment {
                 TextView tv = (TextView) view.findViewById(R.id.text);
                 tv.setText("Hier eine nützliche Info"+date);
 
+                events = db.getEventsParticipationPlanned();
+                ListFragment listFragment = new ListFragment();
+                listFragment.setList(events);
+                getFragmentManager().beginTransaction().replace(R.id.calendar_container, listFragment).commit();
             }
         });
 
