@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,11 @@ import com.example.julian.rentnertreff.Fragments.ListFragment;
 
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,12 +36,14 @@ public class EventAdapter extends BaseAdapter{
     List<Event> eventList;
     Context context;
     private static LayoutInflater inflater=null;
+    boolean createdForDemnaechst = false;
 
 
-    public EventAdapter (Context context, List<Event> eventList) {
+    public EventAdapter (Context context, List<Event> eventList, boolean createdForDemnaechst) {
         // TODO Auto-generated constructor stub
         this.eventList = eventList;
         this.context = context;
+        this.createdForDemnaechst = createdForDemnaechst;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -74,7 +81,30 @@ public class EventAdapter extends BaseAdapter{
         holder.tv2=(TextView) rowView.findViewById(R.id.textView2);
         holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
         holder.tv1.setText(eventList.get(position).getTitle());
-        holder.tv2.setText(eventList.get(position).getPlace() + ", " + eventList.get(position).getStartTime());
+
+        if (createdForDemnaechst){
+            Date currentDate = new Date ();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String eventDateString = eventList.get(position).getStartTime().toString();
+            Date eventDate = null;
+            Log.i("Uhr", eventDateString);
+            try {
+                eventDate = sdf.parse(eventDateString);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            long diff = eventDate.getTime() - currentDate.getTime();
+            long seconds = diff/1000;
+            int minutes = (int) seconds/60;
+            int hours = minutes/60;
+            int days = hours/24;
+
+            holder.tv2.setText("Noch " + days + " Tage");
+        }
+        else{
+            holder.tv2.setText(eventList.get(position).getPlace() + ", " + eventList.get(position).getStartTime());
+        }
         holder.img.setImageResource(eventList.get(position).getImgID());
 
         rowView.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +122,14 @@ public class EventAdapter extends BaseAdapter{
             }
         });
         return rowView;
+    }
+
+    public int getDifferenceDays(Date d1, Date d2) {
+        int daysdiff=0;
+        long diff = d2.getTime() - d1.getTime();
+        long diffDays = diff / (24 * 60 * 60 * 1000)+1;
+        daysdiff = (int) diffDays;
+        return daysdiff;
     }
 
 

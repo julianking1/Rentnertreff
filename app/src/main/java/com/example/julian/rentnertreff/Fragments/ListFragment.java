@@ -28,6 +28,8 @@ public class ListFragment extends Fragment{
     List<Event> event_list;
     ArrayList<String> title_list;
     EventAdapter eventAdapter;
+    boolean createdForDemnaechst;
+    int dayDiff = 0;
 
 
     public ListFragment() {
@@ -38,6 +40,13 @@ public class ListFragment extends Fragment{
         this.event_list = list;
     }
 
+    public void setCreatedForDemnaechst(boolean createdForDemnaechst) {
+        this.createdForDemnaechst = createdForDemnaechst;
+    }
+
+    public void setDayDiff(int dayDiff){
+        this.dayDiff = dayDiff;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +64,7 @@ public class ListFragment extends Fragment{
 
         ListView lv = (ListView) view.findViewById(R.id.listView_events);
 
-        eventAdapter = new EventAdapter(getActivity(), event_list);
+        eventAdapter = new EventAdapter(getActivity(), event_list, createdForDemnaechst);
         lv.setAdapter(eventAdapter);
 
 

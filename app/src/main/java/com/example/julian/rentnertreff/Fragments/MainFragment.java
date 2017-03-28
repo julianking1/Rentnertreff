@@ -64,6 +64,7 @@ public class MainFragment extends Fragment {
                 events = db.getComingEvents();
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                listFragment.setCreatedForDemnaechst(true);
                 getActivity().setTitle("Demnächst");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();            }
         });

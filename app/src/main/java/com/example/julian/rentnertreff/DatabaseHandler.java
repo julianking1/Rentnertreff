@@ -277,7 +277,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         List<Event> eventList = new ArrayList<Event>();
         // Select Query
-        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE startTime BETWEEN '" + currentDate + "' AND '" + date + "'";
+        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE startTime BETWEEN '" + currentDate + "' AND '" + date + "' ORDER BY startTime ASC";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -318,4 +318,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_EVENTS);
     }
+
+
 }
