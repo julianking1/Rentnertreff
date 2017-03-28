@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.julian.rentnertreff.R;
 
@@ -37,6 +38,7 @@ public class LoginActivity2 extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
 
     public boolean proofMail(String email) {
         fehlermeldung = (TextView) findViewById(R.id.textView_login_fehlermeldung);
