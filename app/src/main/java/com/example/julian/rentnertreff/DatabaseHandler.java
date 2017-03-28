@@ -139,8 +139,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public List<Event> getAllEventsFromCategory(String category) {
         List<Event> eventList = new ArrayList<Event>();
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date current = new Date();
+        String currentDate = df.format(current);
         // Select Query
-        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE CATEGORY = '" + category + "' AND PARTICIPATED = 0";
+        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE CATEGORY = '" + category + "' AND PARTICIPATED = 0 AND startTime > '" + currentDate + "'";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -260,7 +264,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public List<Event> getComingEvents() {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DATE, 3);
+        cal.add(Calendar.DATE, 10);
         String date = df.format(cal.getTime());
 
         Date current = new Date();
