@@ -41,6 +41,8 @@ public class MainFragment extends Fragment {
         view  = inflater.inflate(R.layout.fragment_main, container, false);
         db = new DatabaseHandler(getContext());
 
+        getActivity().setTitle("Rentnertreff");
+
 
         LinearLayout kategorie = (LinearLayout) view.findViewById(R.id.kategorieLayout);
         LinearLayout demnaechst = (LinearLayout) view.findViewById(R.id. DemnaechstLayout);
@@ -62,6 +64,7 @@ public class MainFragment extends Fragment {
                 events = db.getComingEvents();
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                getActivity().setTitle("Demnächst");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();            }
         });
 
@@ -71,6 +74,7 @@ public class MainFragment extends Fragment {
                 events = db.getEventsParticipated();
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                getActivity().setTitle("Wie war's?");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });
@@ -81,6 +85,7 @@ public class MainFragment extends Fragment {
                 events = db.getEventsParticipationPlanned();
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                getActivity().setTitle("Mein Kalender");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });

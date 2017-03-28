@@ -46,6 +46,9 @@ public class KategorieFragment extends Fragment{
         LinearLayout  alltag= (LinearLayout) view.findViewById(R.id.alltagLayout);
         LinearLayout  gehirnjogging= (LinearLayout) view.findViewById(R.id.gehirnjoggingLayout);
 
+        getActivity().setTitle("Kategorien");
+
+
 
         db = new DatabaseHandler(getContext());
 
@@ -55,6 +58,7 @@ public class KategorieFragment extends Fragment{
                 events = db.getAllEventsFromCategory("Unterhaltung");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                getActivity().setTitle("Unterhaltung");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });
@@ -65,6 +69,7 @@ public class KategorieFragment extends Fragment{
                 events = db.getAllEventsFromCategory("Natur");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                getActivity().setTitle("Natur");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });
@@ -75,6 +80,7 @@ public class KategorieFragment extends Fragment{
                 events = db.getAllEventsFromCategory("Sport");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                getActivity().setTitle("Sport");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });
@@ -85,6 +91,7 @@ public class KategorieFragment extends Fragment{
                 events = db.getAllEventsFromCategory("Gehirnjogging");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                getActivity().setTitle("Gehirnjogging");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });
@@ -95,6 +102,7 @@ public class KategorieFragment extends Fragment{
                 events = db.getAllEventsFromCategory("Alltag");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                getActivity().setTitle("Alltag");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });
@@ -105,6 +113,7 @@ public class KategorieFragment extends Fragment{
                 events = db.getAllEventsFromCategory("Kultur");
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+                getActivity().setTitle("Kultur");
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
             }
         });

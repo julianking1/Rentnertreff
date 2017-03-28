@@ -83,10 +83,6 @@ public class MainActivity extends AppCompatActivity
         db.addEvent(new Event(4, "Museum", "Kultur" , "BEschreibung" , "2017-04-01" , "2017-04-01", 0, 1, 5.20, "Karlsruhe", R.drawable.museum_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(4, "Shoppen", "Alltag" , "BEschreibung" , "2017-04-01" , "2017-04-01", 0, 1, 5.20, "Karlsruhe", R.drawable.shoppen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-03" , "2017-04-03", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-03" , "2017-04-03", 0, 1, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-03" , "2017-04-03", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-07" , "2017-04-07", 0, 1, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-08" , "2017-04-08", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-08" , "2017-04-08", 0, 1, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-08" , "2017-04-08", 0, 1, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-08" , "2017-04-08", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
@@ -98,7 +94,12 @@ public class MainActivity extends AppCompatActivity
         db.addEvent(new Event(4, "Spieleabend", "Gehirnjogging" , "BEschreibung" , "2017-04-01" , "2017-04-01", 1, 0, 5.2, "Karlsruhe", R.drawable.spiele_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(4, "Joggen", "Sport" , "BEschreibung" , "2017-04-01" , "2017-04-01", 0, 0, 5.20, "Karlsruhe", R.drawable.joggen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(4, "Museum", "Kultur" , "BEschreibung" , "2017-04-01" , "2017-04-01", 0, 0, 5.20, "Karlsruhe", R.drawable.museum_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
-        db.addEvent(new Event(4, "Shoppen", "Alltag" , "Jugendliche bieten an, die Einkaufstaschen zu tragen. Wir treffen uns am Eingang des Ettlinger Tors. Der Jugendtreff sammelt für den Ausbau des Klubraumes und freut sich über eine kleine Spende. " , "2017-03-28" , "2017-03-28", 1, 0, 0.00, "Karlsruhe, Ettlinger Tor", R.drawable.shoppen_event_bild, 30, 14, 1, 1, 0, "Einkaufsliste mitbringen", 3));
+        db.addEvent(new Event(4, "Shoppen", "Alltag" , "Jugendliche bieten an, die Einkaufstaschen zu tragen. Wir treffen uns am Eingang des Ettlinger Tors. Der Jugendtreff sammelt für den Ausbau des Klubraumes und freut sich über eine kleine Spende. " , "2017-04-08" , "2017-04-08", 1, 0, 0.00, "Karlsruhe, Ettlinger Tor", R.drawable.shoppen_event_bild, 30, 14, 1, 1, 0, "Einkaufsliste mitbringen", 3));
+        db.addEvent(new Event(4, "Shoppen", "Alltag" , "Jugendliche bieten an, die Einkaufstaschen zu tragen. Wir treffen uns am Eingang des Ettlinger Tors. Der Jugendtreff sammelt für den Ausbau des Klubraumes und freut sich über eine kleine Spende. " , "2017-04-09" , "2017-04-09", 1, 0, 0.00, "Karlsruhe, Ettlinger Tor", R.drawable.shoppen_event_bild, 30, 14, 1, 1, 0, "Einkaufsliste mitbringen", 3));
+        db.addEvent(new Event(4, "Shoppen", "Alltag" , "Jugendliche bieten an, die Einkaufstaschen zu tragen. Wir treffen uns am Eingang des Ettlinger Tors. Der Jugendtreff sammelt für den Ausbau des Klubraumes und freut sich über eine kleine Spende. " , "2017-04-07" , "2017-04-07", 1, 0, 0.00, "Karlsruhe, Ettlinger Tor", R.drawable.shoppen_event_bild, 30, 14, 1, 1, 0, "Einkaufsliste mitbringen", 3));
+        db.addEvent(new Event(4, "Shoppen", "Alltag" , "Jugendliche bieten an, die Einkaufstaschen zu tragen. Wir treffen uns am Eingang des Ettlinger Tors. Der Jugendtreff sammelt für den Ausbau des Klubraumes und freut sich über eine kleine Spende. " , "2017-04-06" , "2017-04-06", 1, 0, 0.00, "Karlsruhe, Ettlinger Tor", R.drawable.shoppen_event_bild, 30, 14, 1, 1, 0, "Einkaufsliste mitbringen", 3));
+        db.addEvent(new Event(4, "Shoppen", "Alltag" , "Jugendliche bieten an, die Einkaufstaschen zu tragen. Wir treffen uns am Eingang des Ettlinger Tors. Der Jugendtreff sammelt für den Ausbau des Klubraumes und freut sich über eine kleine Spende. " , "2017-04-05" , "2017-04-05", 1, 0, 0.00, "Karlsruhe, Ettlinger Tor", R.drawable.shoppen_event_bild, 30, 14, 1, 1, 0, "Einkaufsliste mitbringen", 3));
+
 
     }
 
@@ -152,18 +153,21 @@ public class MainActivity extends AppCompatActivity
             events = db.getComingEvents();
             ListFragment listFragment = new ListFragment();
             listFragment.setList(events);
+            setTitle("Demnächst");
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
 
         } else if (id == R.id.nav_bewertung) {
             events = db.getEventsParticipated();
             ListFragment fragment = new ListFragment();
             fragment.setList(events);
+            setTitle("Wie war's?");
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         } else if (id == R.id.nav_meinKalender) {
             events = db.getEventsParticipationPlanned();
             ListFragment fragment = new ListFragment();
             fragment.setList(events);
+            setTitle("Mein Kalender");
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         } else {

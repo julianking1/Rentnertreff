@@ -34,8 +34,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/String_Eventname"
-                android:textAppearance="@android:style/TextAppearance.Material.Headline"
                 android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

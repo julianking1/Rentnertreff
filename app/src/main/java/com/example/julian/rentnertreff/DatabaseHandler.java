@@ -223,8 +223,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public List<Event> getEventsParticipationPlanned() {
         List<Event> eventList = new ArrayList<Event>();
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date current = new Date();
+        String currentDate = df.format(current);
         // Select Query
-        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE participationPlanned = 1";
+        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE participationPlanned = 1  AND startTime > '" + currentDate + "'";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
