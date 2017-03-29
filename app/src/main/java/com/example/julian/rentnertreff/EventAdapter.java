@@ -103,7 +103,7 @@ public class EventAdapter extends BaseAdapter{
             holder.tv2.setText("Noch " + days + " Tage");
         }
         else{
-            holder.tv2.setText(eventList.get(position).getPlace() + ", " + eventList.get(position).getStartTime());
+            holder.tv2.setText(eventList.get(position).getPlace() + ", " + eventList.get(position).getDateFormatted());
         }
         holder.img.setImageResource(eventList.get(position).getImgID());
 

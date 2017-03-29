@@ -2,6 +2,12 @@ package com.example.julian.rentnertreff;
 
 import android.os.Parcelable;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  * Created by Julian on 19.03.2017.
  */
@@ -242,5 +248,18 @@ public class Event {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public String getDateFormatted (){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date= null;
+        try {
+            date = sdf.parse(startTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.GERMANY);
+        return df.format(date);
     }
 }

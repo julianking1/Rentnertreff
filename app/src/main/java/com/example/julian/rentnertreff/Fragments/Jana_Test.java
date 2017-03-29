@@ -45,7 +45,6 @@ public class Jana_Test extends Fragment {
         //View erzeugen
         view = inflater.inflate(R.layout.fragment_detail, container, false);
 
-        getActivity().setTitle("Event-Ansicht");
 
         //Layout in Variablen speichern
         title = (TextView) view.findViewById(R.id.title);
