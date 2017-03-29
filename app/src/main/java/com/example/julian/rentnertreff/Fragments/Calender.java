@@ -16,8 +16,12 @@ import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.EventAdapter;
 import com.example.julian.rentnertreff.R;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.util.Calendar.MONDAY;
 
 
 public class Calender extends Fragment {
@@ -37,20 +41,26 @@ public class Calender extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_calender, container, false);
         calendar = (CalendarView) view.findViewById(R.id.calendarView);
+        calendar.setFirstDayOfWeek(MONDAY);
         db = new DatabaseHandler(getContext());
-
+        getActivity().setTitle("Mein Kalender");
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
 
             @Override
             public void onSelectedDayChange(CalendarView cv, int y, int m, int d) {
-                String date = ""+y+"-"+(m+1)+"-"+d;
-                TextView tv = (TextView) view.findViewById(R.id.text);
-                tv.setText("Hier eine nützliche Info"+date);
-
-                events = db.getEventsParticipationPlanned();
+                Date date = java.sql.Date.valueOf(""+y+"-"+(m+1)+"-"+d);
+                events = db.getCertainEvents(date);
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
-                getFragmentManager().beginTransaction().replace(R.id.calendar_container, listFragment).commit();
+                if(events.isEmpty()){
+                    TextView tv = (TextView) view.findViewById(R.id.text);
+                    tv.setText("Keine Events für diesen Tag");
+                    view.findViewById(R.id.calendar_container).setVisibility(View.INVISIBLE);
+                }else {
+                    view.findViewById(R.id.calendar_container).setVisibility(View.VISIBLE);
+                    getFragmentManager().beginTransaction().replace(R.id.calendar_container, listFragment).commit();
+                }
+
             }
         });
 

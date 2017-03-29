@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.CalendarContract;
 import android.text.format.DateUtils;
 
 import java.text.DateFormat;
@@ -14,7 +15,8 @@ import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+import java.sql.Date;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -141,7 +143,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         List<Event> eventList = new ArrayList<Event>();
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date current = new Date();
+        java.util.Date current = new java.util.Date();
         String currentDate = df.format(current);
         // Select Query
         String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE CATEGORY = '" + category + "' AND PARTICIPATED = 0 AND startTime > '" + currentDate + "'";
@@ -225,7 +227,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         List<Event> eventList = new ArrayList<Event>();
 
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date current = new Date();
+        java.util.Date current = new java.util.Date();
         String currentDate = df.format(current);
         // Select Query
         String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE participationPlanned = 1  AND startTime > '" + currentDate + "'";
@@ -271,7 +273,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         cal.add(Calendar.DATE, 10);
         String date = df.format(cal.getTime());
 
-        Date current = new Date();
+        java.util.Date current = new java.util.Date();
         String currentDate = df.format(current);
 
 
@@ -314,12 +316,31 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return eventList;
     }
 
-    /*
-    public List<Event> getCertainEvents( DATUM ) {
 
-        Hier werden die Events eines bestimmten Datums geholt
+    public List<Event> getCertainEvents(java.sql.Date date) {
+        //Hier werden die Events eines bestimmten Datums geholt
+        List<Event> finaleEvents;
+        List<Event> eventList1 = getEventsParticipationPlanned();
+        List<Event> eventList2 = getEventsParticipated();
 
-    }*/
+        Iterator i1 = eventList2.iterator();
+        while(i1.hasNext()){
+            Event eventi = (Event) i1.next();
+            eventList1.add(eventi);
+        }
+        Iterator i2 = eventList1.iterator();
+        finaleEvents = eventList2;
+        finaleEvents.clear();
+        while(i2.hasNext()){
+            Event eventj = (Event)i2.next();
+            if(eventj.getStartTime().toString().equals(date.toString())){
+                finaleEvents.add(eventj);
+            }
+        }
+        return finaleEvents;
+    }
+
+
 
     public void deleteAll (){
         SQLiteDatabase db = this.getWritableDatabase();

@@ -16,54 +16,64 @@
             android:layout_height="71dp"
             android:background="@color/common_google_signin_btn_text_dark_default"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="1628dp" />
+            tools:layout_editor_absoluteY="2033dp" />
 
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/common_google_signin_btn_text_dark_default"
+            android:dateTextAppearance="@android:style/TextAppearance.Large"
             android:touchscreenBlocksFocus="true"
+            android:weekDayTextAppearance="@android:style/TextAppearance.Large"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/list_container"
-            android:layout_width="397dp"
-            android:layout_height="221dp"
-            android:layout_marginBottom="9dp"
-            android:background="@drawable/layout_rounded_corners_grey_tab"
+            android:layout_width="364dp"
+            android:layout_height="208dp"
+            android:background="@color/common_google_signin_btn_text_dark_default"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="8dp">
-
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/calendar_container"
-                android:layout_width="379dp"
-                android:layout_height="160dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="8dp"
-                tools:layout_editor_absoluteY="31dp">
-
-            </android.support.constraint.ConstraintLayout>
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent">
 
             <TextView
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="Klichen Sie ein beliebiges Datum an."
+                android:text="Wählen Sie ein Datum."
+                android:textSize="24dp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/calendar_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                android:layout_marginLeft="8dp">
+
+            </android.support.constraint.ConstraintLayout>
+
         </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>
