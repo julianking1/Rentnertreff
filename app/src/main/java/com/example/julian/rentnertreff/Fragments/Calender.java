@@ -40,18 +40,24 @@ public class Calender extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_calender, container, false);
+        getActivity().setTitle("Mein Kalender");
+
         calendar = (CalendarView) view.findViewById(R.id.calendarView);
         calendar.setFirstDayOfWeek(MONDAY);
+
         db = new DatabaseHandler(getContext());
-        getActivity().setTitle("Mein Kalender");
+
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
 
             @Override
             public void onSelectedDayChange(CalendarView cv, int y, int m, int d) {
+
                 Date date = java.sql.Date.valueOf(""+y+"-"+(m+1)+"-"+d);
                 events = db.getCertainEvents(date);
+
                 ListFragment listFragment = new ListFragment();
                 listFragment.setList(events);
+
                 if(events.isEmpty()){
                     TextView tv = (TextView) view.findViewById(R.id.text);
                     tv.setText("Keine Events für diesen Tag");
