@@ -49,19 +49,19 @@ public class DetailSubfragment_Fakten extends Fragment {
 
         //Stringwerte berechnen
         if(event.isFood()==1){
-            strEssen = "Verpflegung mitbringen";
+            strEssen = " Verpflegung selbst mitbringen";
         } else{
-            strEssen = "Verpflegung inklusive";
+            strEssen = " Verpflegung ist inklusive";
         }
         if(event.isDisabled()==1){
-            strRollstuhlgerecht = "Rollstuhlgerechte Veranstaltung";
+            strRollstuhlgerecht = " Rollstuhlgerechte Veranstaltung";
         } else{
-            strRollstuhlgerecht = "nicht rollstuhlgerecht";
+            strRollstuhlgerecht = " nicht rollstuhlgerecht";
         }
         if(event.isDogs()==1){
-            strHaustiere = "Hunde sind erlaubt";
+            strHaustiere = " Hunde sind erlaubt";
         } else{
-            strHaustiere= "Es sind keine Hunde erlaubt";
+            strHaustiere= " Hunde nicht erlaubt";
         }
 
 
@@ -69,7 +69,7 @@ public class DetailSubfragment_Fakten extends Fragment {
         essen.setText(strEssen);
         rollstuhlgerecht.setText(strRollstuhlgerecht);
         haustiere.setText(strHaustiere);
-        sonstiges.setText(event.getInfo());
+        sonstiges.setText(" "+event.getInfo());
 
         return view;
     }
