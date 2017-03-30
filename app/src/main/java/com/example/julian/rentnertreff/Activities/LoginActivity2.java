@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class LoginActivity2 extends AppCompatActivity {
     EditText email;
     EditText password;
     TextView fehlermeldung;
+    Switch veranstalterSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,9 @@ public class LoginActivity2 extends AppCompatActivity {
         }
     }
 
+    public void switchClicked (View view){
+        Toast.makeText(this, "Die Veranstalter-Ansicht ist in dieser Version nicht implementiert", Toast.LENGTH_LONG).show();
+    }
 
     public boolean proofMail(String email) {
         fehlermeldung = (TextView) findViewById(R.id.textView_login_fehlermeldung);
