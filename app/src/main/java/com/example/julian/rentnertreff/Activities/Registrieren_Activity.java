@@ -23,8 +23,6 @@ public class Registrieren_Activity extends AppCompatActivity {
     private EditText password;
     private EditText wohnort;
     private EditText name;
-    private int progressChanged;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,11 +57,12 @@ public class Registrieren_Activity extends AppCompatActivity {
         name = (EditText) findViewById(R.id.edit_register_name);
         wohnort =  (EditText) findViewById(R.id.edit_register_wohnort) ;
         email = (EditText) findViewById(R.id.edit_register_mail) ;
+        password = (EditText) findViewById(R.id.edit_register_password);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (proofName(name.getText().toString()) && proofMail(email.getText().toString()) && proofPassword(password.getText().toString()) && proofLocation(wohnort.getText().toString())  && proofSurrounding(progressChanged)){
+                if (proofName(name.getText().toString()) && proofMail(email.getText().toString()) && proofPassword(password.getText().toString()) && proofLocation(wohnort.getText().toString())){
                     Intent intent = new Intent(Registrieren_Activity.this, MainActivity.class);
                     startActivity(intent);
                 }
@@ -111,21 +110,11 @@ public class Registrieren_Activity extends AppCompatActivity {
         if (location.length() > 0 ){
             return true;
         }else {
-            fehlermeldung.setText("Name darf nicht leer sein!");
+            fehlermeldung.setText("Wohnort darf nicht leer sein!");
             return false;
         }
     }
 
-    public boolean proofSurrounding (int surronding){
-        fehlermeldung = (TextView) findViewById(R.id.register_fehlermeldung);
-
-        if (surronding > 0 ){
-            return true;
-        }else {
-            fehlermeldung.setText("Ein Umkreis von unter 1 km ist nicht empfehlenswert!");
-            return false;
-        }
-    }
 
 
 

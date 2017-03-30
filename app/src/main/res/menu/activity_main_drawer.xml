@@ -11,19 +11,32 @@
 
 
     <item android:title="@string/String_menue">
+    <menu>
+        <item
+            android:id="@+id/nav_kategorie"
+            android:title="@string/String_Kategorie" />
+        <item
+            android:id="@+id/nav_demnaechst"
+            android:title="@string/String_Demnaechst" />
+        <item
+            android:id="@+id/nav_bewertung"
+            android:title="@string/String_wieWars" />
+        <item
+            android:id="@+id/nav_meinKalender"
+            android:title="@string/String_meinKalender" />
+    </menu>
+    </item>
+
+    <item android:title="@string/Allgemein">
         <menu>
-                <item
-                    android:id="@+id/nav_kategorie"
-                    android:title="@string/String_Kategorie" />
-                <item
-                    android:id="@+id/nav_demnaechst"
-                    android:title="@string/String_Demnaechst" />
-                <item
-                    android:id="@+id/nav_bewertung"
-                    android:title="@string/String_wieWars" />
-                <item
-                    android:id="@+id/nav_meinKalender"
-                    android:title="@string/String_meinKalender" />
+            <item
+                android:id="@+id/nav_einstellungen"
+                android:icon="@android:drawable/ic_menu_manage"
+                android:title="@string/Einstellungen" />
+            <item
+                android:id="@+id/nav_Hilfe"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="@string/Hilfe" />
         </menu>
     </item>
 

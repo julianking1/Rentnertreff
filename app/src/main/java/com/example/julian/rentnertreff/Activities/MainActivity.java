@@ -146,6 +146,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this, "HILFE: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
             return true;
         }
 
@@ -193,7 +194,12 @@ public class MainActivity extends AppCompatActivity
             setTitle("Mein Kalender");
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
-        } else {
+        } else if (id == R.id.nav_einstellungen) {
+            Toast.makeText(this, "EINSTELLUNGEN: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_Hilfe) {
+            Toast.makeText(this, "HILFE: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
+        }
+        else {
             Fragment fragment = new MainFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
