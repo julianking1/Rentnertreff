@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this, "HILFE: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
             return true;
         }
 
