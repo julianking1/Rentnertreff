@@ -20,7 +20,8 @@
                 android:id="@+id/besteck"
                 android:layout_width="@dimen/icon_small"
                 android:layout_height="@dimen/icon_small"
-                app:srcCompat="@android:drawable/ic_delete" />
+                android:padding="4dp"
+                app:srcCompat="@drawable/essen" />
 
             <TextView
                 android:id="@+id/essen"

@@ -347,5 +347,48 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM " + TABLE_EVENTS);
     }
 
+    public void setEventsToPArticipated(){
+
+        java.util.Date date = new java.util.Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDateString = sdf.format(date);
+        // Select Query
+        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE startTime >'" + currentDateString + "' AND ParticipationPlanned = 1" ;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Event event = new Event();
+                event.setId(Integer.parseInt(cursor.getString(0)));
+                event.setTitle(cursor.getString(1));
+                event.setCategory(cursor.getString(2));
+                event.setDescription(cursor.getString(3));
+                event.setStartTime(cursor.getString(4));
+                event.setEndTime(cursor.getString(5));
+                event.setParticipated(1);
+                event.setParticipation_planned(0);
+                event.setPrice(Double.parseDouble(cursor.getString(8)));
+                event.setPlace(cursor.getString(9));
+                event.setImgID(Integer.parseInt(cursor.getString(10)));
+                event.setMaxMembers(Integer.parseInt(cursor.getString(11)));
+                event.setMembers(Integer.parseInt(cursor.getString(12)));
+                event.setFood(Integer.parseInt(cursor.getString(13)));
+                event.setDisabled(Integer.parseInt(cursor.getString(14)));
+                event.setDogs(Integer.parseInt(cursor.getString(15)));
+                event.setInfo(cursor.getString(16));
+                event.setRating(Integer.parseInt(cursor.getString(17)));
+
+                updateEvent(event);
+
+            } while (cursor.moveToNext());
+        }
+
+
+    }
+
+
 
 }

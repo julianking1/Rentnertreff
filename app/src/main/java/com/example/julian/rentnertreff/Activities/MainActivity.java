@@ -99,8 +99,11 @@ public class MainActivity extends AppCompatActivity
         db.addEvent(new Event(4, "Shoppen", "Alltag" , "Jugendliche bieten an, die Einkaufstaschen zu tragen. Wir treffen uns am Eingang des Ettlinger Tors. Der Jugendtreff sammelt für den Ausbau des Klubraumes und freut sich über eine kleine Spende. " , "2017-04-07" , "2017-04-07", 1, 0, 0.00, "Karlsruhe, Ettlinger Tor", R.drawable.shoppen_event_bild, 30, 14, 1, 1, 0, "Einkaufsliste mitbringen", 3));
         db.addEvent(new Event(4, "Shoppen", "Alltag" , "Jugendliche bieten an, die Einkaufstaschen zu tragen. Wir treffen uns am Eingang des Ettlinger Tors. Der Jugendtreff sammelt für den Ausbau des Klubraumes und freut sich über eine kleine Spende. " , "2017-04-06" , "2017-04-06", 1, 0, 0.00, "Karlsruhe, Ettlinger Tor", R.drawable.shoppen_event_bild, 30, 14, 1, 1, 0, "Einkaufsliste mitbringen", 3));
         db.addEvent(new Event(4, "Shoppen", "Alltag" , "Jugendliche bieten an, die Einkaufstaschen zu tragen. Wir treffen uns am Eingang des Ettlinger Tors. Der Jugendtreff sammelt für den Ausbau des Klubraumes und freut sich über eine kleine Spende. " , "2017-04-05" , "2017-04-05", 1, 0, 0.00, "Karlsruhe, Ettlinger Tor", R.drawable.shoppen_event_bild, 30, 14, 1, 1, 0, "Einkaufsliste mitbringen", 3));
+        db.addEvent(new Event(4, "Test", "Sport" , "BEschreibung" , "2017-03-01" , "2017-04-01", 0, 1, 5.20, "Karlsruhe", R.drawable.joggen_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
 
 
+
+        db.setEventsToPArticipated();
     }
 
     @Override

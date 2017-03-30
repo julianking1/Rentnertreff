@@ -55,7 +55,7 @@ public class Jana_Test extends Fragment {
 
         //Werte einfügen
         title.setText(event.getTitle());
-        time.setText(event.getStartTime());
+        time.setText(event.getDateFormatted());
         place.setText(event.getPlace());
         img.setImageResource(event.getImgID());
 
