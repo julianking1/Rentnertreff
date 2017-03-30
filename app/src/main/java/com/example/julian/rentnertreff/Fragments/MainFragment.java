@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.*;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -15,6 +16,8 @@ import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.R;
 
 import java.util.List;
+
+import static android.R.id.toggle;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,9 +37,6 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
-
 
         view  = inflater.inflate(R.layout.fragment_main, container, false);
         db = new DatabaseHandler(getContext());

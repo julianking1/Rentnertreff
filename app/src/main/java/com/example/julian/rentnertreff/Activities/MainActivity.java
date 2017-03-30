@@ -3,15 +3,20 @@ package com.example.julian.rentnertreff.Activities;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 import com.example.julian.rentnertreff.DatabaseHandler;
 import com.example.julian.rentnertreff.Event;
@@ -28,7 +33,7 @@ public class MainActivity extends AppCompatActivity
 
     List<Event> events;
     DatabaseHandler db;
-
+    public ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +42,24 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+
+        /*
+        toggle.setDrawerIndicatorEnabled(false);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);*/
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         Fragment startFragment = new MainFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, startFragment).commit();
-
 
 
         //create DBHandler and create mock-data
@@ -125,17 +135,26 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Toast.makeText(this, "huhu", Toast.LENGTH_SHORT).show();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
+
+        /*
+        if(id == android.R.id.home){
+            Toast.makeText(this, "huhu", Toast.LENGTH_SHORT).show();
+            onBackPressed();
+            return true;
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -154,6 +173,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_demnaechst) {
             events = db.getComingEvents();
+            toggle.setDrawerIndicatorEnabled(false);
             ListFragment listFragment = new ListFragment();
             listFragment.setList(events);
             setTitle("Demnächst");

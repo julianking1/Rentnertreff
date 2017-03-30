@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.julian.rentnertreff.Activities.MainActivity;
 import com.example.julian.rentnertreff.DatabaseHandler;
 import com.example.julian.rentnertreff.Event;
 import com.example.julian.rentnertreff.EventAdapter;
@@ -79,6 +80,5 @@ public class ListFragment extends Fragment{
 
         return view;
     }
-
 
 }
