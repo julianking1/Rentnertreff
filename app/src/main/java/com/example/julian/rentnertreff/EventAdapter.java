@@ -99,8 +99,14 @@ public class EventAdapter extends BaseAdapter{
             int minutes = (int) seconds/60;
             int hours = minutes/60;
             int days = hours/24;
+            int daysPlus1 = days + 1;
 
-            holder.tv2.setText("Noch " + days + " Tage");
+            if (daysPlus1==1){
+                holder.tv2.setText("Noch " + daysPlus1 + " Tag");
+
+            } else {
+                holder.tv2.setText("Noch " + daysPlus1 + " Tage");
+            }
         }
         else{
             holder.tv2.setText(eventList.get(position).getPlace() + ", " + eventList.get(position).getDateFormatted());
