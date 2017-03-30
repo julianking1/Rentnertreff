@@ -353,7 +353,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String currentDateString = sdf.format(date);
         // Select Query
-        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE startTime >'" + currentDateString + "' AND ParticipationPlanned = 1" ;
+        String selectQuery = "SELECT  * FROM " + TABLE_EVENTS + " WHERE startTime <'" + currentDateString + "' AND ParticipationPlanned = 1" ;
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
