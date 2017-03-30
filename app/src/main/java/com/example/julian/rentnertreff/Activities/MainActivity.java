@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 import com.example.julian.rentnertreff.DatabaseHandler;
 import com.example.julian.rentnertreff.Event;
@@ -173,7 +174,12 @@ public class MainActivity extends AppCompatActivity
             setTitle("Mein Kalender");
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
-        } else {
+        } else if (id == R.id.nav_einstellungen) {
+            Toast.makeText(this, "EINSTELLUNGEN: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_Hilfe) {
+            Toast.makeText(this, "HILFE: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
+        }
+        else {
             Fragment fragment = new MainFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 

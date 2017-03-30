@@ -20,6 +20,7 @@
         android:layout_marginStart="8dp"
         android:onClick="register"
         android:text="@string/String_registrieren"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
@@ -138,6 +139,7 @@
         android:layout_marginTop="8dp"
         android:onClick="login"
         android:text="@string/String_Anmelden"
+        android:textStyle="bold"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
