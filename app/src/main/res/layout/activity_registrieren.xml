@@ -33,7 +33,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="325dp"
             android:max="50"
-            android:progress="0"
+            android:progress="1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -182,6 +182,8 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:textAlignment="center"
+        android:textColor="#d39e9e"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/button_register_registrieren"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
