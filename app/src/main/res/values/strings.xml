@@ -66,6 +66,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="Einstellungen">Einstellungen</string>
     <string name="Hilfe">Hilfe</string>
+    <string name="THilfe">Telefonische Hilfe</string>
     <string name="Allgemein">Allgemein</string>
 
 </resources>
