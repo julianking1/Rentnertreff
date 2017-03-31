@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.julian.rentnertreff.DatabaseHandler;
 import com.example.julian.rentnertreff.Event;
+import com.example.julian.rentnertreff.Fragments.Calender;
 import com.example.julian.rentnertreff.Fragments.KategorieFragment;
 import com.example.julian.rentnertreff.Fragments.ListFragment;
 import com.example.julian.rentnertreff.Fragments.MainFragment;
@@ -144,7 +145,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(this, "HILFE: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "TELEFONISCHE HILFE: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
             return true;
         }
 
@@ -172,9 +173,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_demnaechst) {
             events = db.getComingEvents();
-            toggle.setDrawerIndicatorEnabled(false);
             ListFragment listFragment = new ListFragment();
             listFragment.setList(events);
+            listFragment.setCreatedForDemnaechst(true);
             setTitle("Demnächst");
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
 
@@ -186,11 +187,8 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
         } else if (id == R.id.nav_meinKalender) {
-            events = db.getEventsParticipationPlanned();
-            ListFragment fragment = new ListFragment();
-            fragment.setList(events);
-            setTitle("Mein Kalender");
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+            Fragment fragment = new Calender();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("main_fragment").commit();
 
         } else if (id == R.id.nav_einstellungen) {
             Toast.makeText(this, "EINSTELLUNGEN: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
