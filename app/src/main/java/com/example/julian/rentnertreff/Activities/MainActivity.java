@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity
         db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-07" , "2017-04-07", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-07" , "2017-04-07", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-03" , "2017-04-03", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
-        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-02" , "2017-04-02", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
+        db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04" +
+                "-02" , "2017-04-02", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(1, "Wandern", "Natur" , "BEschreibung" , "2017-04-07" , "2017-04-07", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(2, "Angeln", "Natur" , "BEschreibung" , "2017-04-01" , "2017-04-01", 0, 0, 5.20, "Karlsruhe", R.drawable.wandern_event_bild, 20, 10, 1, 1, 1, "Wanderschuhe", 3));
         db.addEvent(new Event(3, "Bowling", "Unterhaltung" , "Heute bieten wir wieder unser berühmtes Spezial-Angebot an. Im Preis sind 2 Stunden Bowling und das Tagesgericht inklusive. Auf Wunsch veranstalten wir außerdem ein kleines Turnier." , "2017-05-01" , "2017-05-01", 1, 0, 18.20, "Karlsruhe, Hauptstr. 3", R.drawable.bowling_event_bild, 20, 10, 1, 1, 1, "Sportschuhe mitbringen", 0));
