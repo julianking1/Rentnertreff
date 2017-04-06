@@ -16,15 +16,13 @@
             android:layout_width="0dp"
             android:layout_height="71dp"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="2648dp" />
+            tools:layout_editor_absoluteY="2891dp" />
 
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="-294dp"
             android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
 
             android:dateTextAppearance="@android:style/TextAppearance.Large"
@@ -34,7 +32,8 @@
             android:weekDayTextAppearance="@android:style/TextAppearance.Large"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="1.0" />
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"

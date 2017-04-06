@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_kategorie) {
             Fragment fragment = new KategorieFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("category_fragment").commit();
 
         } else if (id == R.id.nav_demnaechst) {
             events = db.getComingEvents();
@@ -183,18 +183,18 @@ public class MainActivity extends AppCompatActivity
             listFragment.setList(events);
             listFragment.setCreatedForDemnaechst(true);
             setTitle("Demnächst");
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("category_fragment").commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, listFragment).addToBackStack("next_fragment").commit();
 
         } else if (id == R.id.nav_bewertung) {
             events = db.getEventsParticipated();
             ListFragment fragment = new ListFragment();
             fragment.setList(events);
             setTitle("Wie war's?");
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("feedback_fragment").commit();
 
         } else if (id == R.id.nav_meinKalender) {
             Fragment fragment = new Calender();
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("main_fragment").commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack("calender_fragment").commit();
 
         } else if (id == R.id.nav_einstellungen) {
             Toast.makeText(this, "EINSTELLUNGEN: Diese Funktion ist in der App noch nicht implementiert!", Toast.LENGTH_SHORT).show();
